@@ -11,3 +11,11 @@
   display: flex;
   flex-direction: row-reverse;
 }
+
+.img {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}

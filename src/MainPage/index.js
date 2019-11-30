@@ -30,7 +30,7 @@ class MainPage extends React.Component {
           <Button primary>Products</Button>
           <Button primary>Home</Button>
         </div>
-        <div>
+        <div className="img">
           <img src={iphone11} alt="Iphone 11 Pro Max" />
         </div>
       </div>
