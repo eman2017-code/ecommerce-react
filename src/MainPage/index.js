@@ -32,6 +32,7 @@ class MainPage extends React.Component {
         </div>
         <div className="img">
           <img src={iphone11} alt="Iphone 11 Pro Max" />
+          <Icon name="right arrow" className="arrow" />
         </div>
       </div>
     );
