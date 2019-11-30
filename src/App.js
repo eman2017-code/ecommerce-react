@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Button, Icon, Menu, Dropdown } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import iphone11 from "./iphone11Pro.png";
-import AllProducts from "./AllProducts";
+// import AllProducts from "./AllProducts";
 
 class App extends React.Component {
   constructor() {
@@ -12,22 +12,24 @@ class App extends React.Component {
       guest: true,
       showingProducts: false,
       loggedIn: false,
-      options: [
-        { key: 1, text: "Sign Up", value: 1 },
-        { key: 2, text: "Login", value: 2 }
-      ]
+      showAccount: false
     };
   }
 
   // create a method that will allow the user to see the products page
   showProducts = () => {
-    console.log("you are hitting the products page");
     this.setState({
       showingProducts: true
     });
   };
 
-  // create a method that will show the myAccount Component
+  // create a method that will show the myAccount component
+  showMyAccount = () => {
+    console.log("they are trying to see their account");
+    this.setState({
+      showAccount: true
+    });
+  };
 
   render() {
     return (
@@ -35,15 +37,9 @@ class App extends React.Component {
         <h3>ecommerce site</h3>
         <div className="top">
           <Button secondary>Wish List</Button>
-          <Menu compact>
-            {/* <Button secondary>My Account</Button> */}
-            <Dropdown
-              text="My Account"
-              options={this.state.options}
-              simple
-              item
-            />
-          </Menu>
+          <Button secondary onClick={this.showMyAccount}>
+            My Account
+          </Button>
         </div>
         <p>logo</p>
         <div className="nav">
