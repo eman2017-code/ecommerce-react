@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+body {
+  background: linear-gradient(#d7e1ec, #ffffff);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .top {
   display: flex;
   justify-content: flex-end;
