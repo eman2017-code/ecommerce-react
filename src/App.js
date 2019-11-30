@@ -54,7 +54,7 @@ class App extends React.Component {
           </Button>
           <Button secondary>Home</Button>
         </div>
-        {/* {this.state.showingProducts ? <AllProducts /> : null} */}
+        {this.state.showAccount ? console.log("hi") : null}
         <div className="img">
           <h1>Shop Now</h1>
           <img src={iphone11} alt="Iphone 11 Pro Max" />
