@@ -46,6 +46,7 @@ class MainPage extends React.Component {
           <img src={iphone11} alt="Iphone 11 Pro Max" />
           <Icon name="right arrow" className="arrow" />
         </div>
+        {this.state.showingProducts ? <AllProducts /> : null}
       </div>
     );
   }
