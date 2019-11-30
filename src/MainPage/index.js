@@ -14,20 +14,18 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
+        <h3>ecommerce site</h3>
         <div className="top">
-          <h3>ecommerce site</h3>
           <Button primary>Wish List</Button>
           <Button primary>My Account</Button>
         </div>
-        <p className="logo">logo</p>
-        <div className="leftSide">
+        <Icon name="lock" size="huge" />
+        <div className="nav">
           <Button>
-            <Button.Content visible>Search Icon</Button.Content>
-            <Icon name="search" />
+            <Icon name="shopping cart" />
           </Button>
           <Button>
-            <Button.Content visible>Shopping Cart</Button.Content>
-            <Icon name="shopping cart" />
+            <Icon name="search" />
           </Button>
           <Button primary>Products</Button>
           <Button primary>Home</Button>
