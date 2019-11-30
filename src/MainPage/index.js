@@ -1,15 +1,22 @@
 import React from "react";
 import { Button, Icon } from "semantic-ui-react";
 import iphone11 from "../iphone11Pro.png";
+import AllProducts from "../AllProducts";
 
 class MainPage extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      guest: true
+      guest: true,
+      showingProducts: false
     };
   }
+
+  // create a function the renders the product page
+  showAllProducts = () => {
+    console.log("hitting the product page");
+  };
 
   render() {
     return (
@@ -27,7 +34,9 @@ class MainPage extends React.Component {
           <Button>
             <Icon name="search" />
           </Button>
-          <Button primary>Products</Button>
+          <Button primary onClick={this.showAllProducts}>
+            Products
+          </Button>
           <Button primary>Home</Button>
         </div>
         <div className="img">
