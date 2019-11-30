@@ -1,20 +1,20 @@
-import React, {
-  Component
-} from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import MainPage from './MainPage';
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
+class App extends React.Component {
+	constructor() {
+		super();
 
-    this.state = {}
-  }
-  render() {
-    return (
-      'hey there'
-    )
-  }
+		this.state = {};
+	}
+	render() {
+		return (
+			<div>
+				<MainPage />
+			</div>
+		);
+	}
 }
 
 export default App;
