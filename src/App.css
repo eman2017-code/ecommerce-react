@@ -29,3 +29,8 @@ body {
 .arrow {
   padding: 10%;
 }
+
+h1 {
+  margin-right: 3%;
+  text-decoration: underline;
+}
