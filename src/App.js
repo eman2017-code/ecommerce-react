@@ -2,7 +2,8 @@ import React from "react";
 import "./App.css";
 import { Button, Icon } from "semantic-ui-react";
 import iphone11 from "./iphone11Pro.png";
-// import AllProducts from "./AllProducts";
+import AllProducts from "./AllProducts";
+import UserShowMyAccount from "./UserShowMyAccount";
 
 class App extends React.Component {
   constructor() {
@@ -25,7 +26,6 @@ class App extends React.Component {
 
   // create a method that will show the myAccount component
   showMyAccount = () => {
-    console.log("they are trying to see their account");
     this.setState({
       showAccount: true
     });
@@ -54,7 +54,8 @@ class App extends React.Component {
           </Button>
           <Button secondary>Home</Button>
         </div>
-        {this.state.showAccount ? console.log("hi") : null}
+        {/* {this.state.showingProducts ? <AllProducts /> : null} */}
+        {/* {this.state.showAccount ? <UserShowMyAccount /> : null} */}
         <div className="img">
           <h1>Shop Now</h1>
           <img src={iphone11} alt="Iphone 11 Pro Max" />
