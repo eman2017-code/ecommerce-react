@@ -2,14 +2,15 @@
   text-align: center;
 }
 
-.header {
-  text-align: right;
-  background: yellow;
-  padding: 3%;
+.leftSide {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1%;
 }
 
-.icons {
-  color: green;
-  display: flex;
-  justify-content: flex-end;
+.logo {
+  float: left;
+  margin: 3%;
+  background: yellow;
+  padding: 2%;
 }
