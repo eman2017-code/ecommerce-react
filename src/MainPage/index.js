@@ -16,6 +16,9 @@ class MainPage extends React.Component {
   // create a function the renders the product page
   showAllProducts = () => {
     console.log("hitting the product page");
+    this.setState({
+      showingProducts: true
+    });
   };
 
   render() {
