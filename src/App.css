@@ -36,7 +36,9 @@ h1 {
 }
 
 form {
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
   width: 40%;
   border: 3px solid black;
   padding: 5%;

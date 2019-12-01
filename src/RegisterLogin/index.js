@@ -90,11 +90,6 @@ class RegisterLogin extends React.Component {
           </div>
           <div>
             <div>
-              <Header>
-                <h1> Jedi Academy </h1>
-              </Header>
-            </div>
-            <div>
               <Form onSubmit={this.handleSubmit}>
                 {this.state.action === "register" ? (
                   <React.Fragment>
