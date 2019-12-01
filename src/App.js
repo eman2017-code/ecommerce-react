@@ -6,6 +6,7 @@ import { Button, Icon } from "semantic-ui-react";
 import iphone11 from "./iphone11Pro.png";
 import SearchProducts from "./SearchProducts";
 import AllProducts from "./AllProducts";
+import RegisterLogin from "./RegisterLogin";
 
 class App extends React.Component {
   constructor() {
@@ -33,7 +34,9 @@ class App extends React.Component {
                   <h3>ecommerce site</h3>
                   <div className="top">
                     <Button secondary>Wish List</Button>
-                    <Button secondary>My Account</Button>
+                    <Link to="/register-login">
+                      <Button secondary>My Account</Button>
+                    </Link>
                   </div>
                   <p>logo</p>
                   <div className="nav">
@@ -64,6 +67,12 @@ class App extends React.Component {
             }}
           />
           <Route path="/products" exact strict component={AllProducts} />
+          <Route
+            path="/register-login"
+            exact
+            strict
+            component={RegisterLogin}
+          />
         </div>
       </Router>
     );

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import Route from "react-router-dom/Route";
 import { Button, Icon } from "semantic-ui-react";
 import SearchProducts from "../SearchProducts";
+import RegisterLogin from "../RegisterLogin";
 
 class AllProducts extends React.Component {
   constructor() {
@@ -16,7 +17,9 @@ class AllProducts extends React.Component {
         <h3>ecommerce site</h3>
         <div className="top">
           <Button secondary>Wish List</Button>
-          <Button secondary>My Account</Button>
+          <Link to="/register-login">
+            <Button secondary>My Account</Button>
+          </Link>
         </div>
         <p>logo</p>
         <div className="nav">
@@ -31,6 +34,12 @@ class AllProducts extends React.Component {
           <Link to="/products">
             <Button secondary>Products</Button>
           </Link>
+          <Route
+            path="/register-login"
+            exact
+            strict
+            component={RegisterLogin}
+          />
         </div>
       </div>
     );
