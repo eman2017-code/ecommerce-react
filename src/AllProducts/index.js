@@ -13,35 +13,37 @@ class AllProducts extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h3>ecommerce site</h3>
-        <div className="top">
-          <Button secondary>Wish List</Button>
-          <Link to="/register-login">
-            <Button secondary>My Account</Button>
-          </Link>
-        </div>
-        <p>logo</p>
-        <div className="nav">
-          <Button>
-            <Icon name="shopping cart" />
-          </Button>
-          <SearchProducts />
+      <Router>
+        <div>
+          <h3>ecommerce site</h3>
+          <div className="top">
+            <Button secondary>Wish List</Button>
+            <Link to="/register-login">
+              <Button secondary>My Account</Button>
+            </Link>
+          </div>
+          <p>logo</p>
+          <div className="nav">
+            <Button>
+              <Icon name="shopping cart" />
+            </Button>
+            <SearchProducts />
 
-          <Link to="/home">
-            <Button secondary>Home</Button>
-          </Link>
-          <Link to="/products">
-            <Button secondary>Products</Button>
-          </Link>
-          <Route
-            path="/register-login"
-            exact
-            strict
-            component={RegisterLogin}
-          />
+            <Link to="/home">
+              <Button secondary>Home</Button>
+            </Link>
+            <Link to="/products">
+              <Button secondary>Products</Button>
+            </Link>
+            <Route
+              path="/register-login"
+              exact
+              strict
+              component={RegisterLogin}
+            />
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
