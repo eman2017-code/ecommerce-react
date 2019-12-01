@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Button, Icon } from "semantic-ui-react";
 import iphone11 from "./iphone11Pro.png";
-import UserShowMyAccount from "./UserShowMyAccount";
+import SearchProducts from "./SearchProducts";
 
 class App extends React.Component {
   constructor() {
@@ -31,9 +31,7 @@ class App extends React.Component {
           <Button>
             <Icon name="shopping cart" />
           </Button>
-          <Button>
-            <Icon name="search" />
-          </Button>
+          <SearchProducts />
           <Button secondary>Products</Button>
           <Button secondary>Home</Button>
         </div>
