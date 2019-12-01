@@ -7,8 +7,7 @@ import {
   Divider,
   Checkbox
 } from "semantic-ui-react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import Route from "react-router-dom/Route";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import SearchProducts from "../SearchProducts";
 
 class RegisterLogin extends React.Component {

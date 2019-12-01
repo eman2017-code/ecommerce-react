@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import Route from "react-router-dom/Route";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { Button, Icon } from "semantic-ui-react";
 import iphone11 from "./iphone11Pro.png";
 import SearchProducts from "./SearchProducts";
 import AllProducts from "./AllProducts";
 import RegisterLogin from "./RegisterLogin";
+import UserMyAccountPage from "./UserMyAccountPage";
 
 class App extends React.Component {
   constructor() {
@@ -73,6 +73,9 @@ class App extends React.Component {
             strict
             component={RegisterLogin}
           />
+          {/* <div>
+            <UserMyAccountPage />
+          </div> */}
         </div>
       </Router>
     );

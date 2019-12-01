@@ -41,6 +41,7 @@ class AllProducts extends React.Component {
             component={RegisterLogin}
           />
         </div>
+        <h1>this is where all the products will be displayed</h1>
       </div>
     );
   }
