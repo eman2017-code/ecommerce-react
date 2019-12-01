@@ -6,7 +6,7 @@ import iphone11 from "./iphone11Pro.png";
 import SearchProducts from "./SearchProducts";
 import AllProducts from "./AllProducts";
 import RegisterLogin from "./RegisterLogin";
-import UserMyAccountPage from "./UserMyAccountPage";
+// import UserMyAccountPage from "./UserMyAccountPage";
 
 class App extends React.Component {
   constructor() {
