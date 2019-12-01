@@ -9,17 +9,12 @@ class App extends React.Component {
     super();
 
     this.state = {
+      // everyone who enters the site is going to be a guest
       guest: true,
+      // in order to add something to their cart, they must be logged in
       loggedIn: false
     };
   }
-
-  // create a method that will show the myAccount component
-  showMyAccount = () => {
-    this.setState({
-      showAccount: true
-    });
-  };
 
   render() {
     return (
