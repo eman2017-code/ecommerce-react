@@ -22,9 +22,7 @@ class App extends React.Component {
         <h3>ecommerce site</h3>
         <div className="top">
           <Button secondary>Wish List</Button>
-          <Button secondary onClick={this.showMyAccount}>
-            My Account
-          </Button>
+          <Button secondary>My Account</Button>
         </div>
         <p>logo</p>
         <div className="nav">
