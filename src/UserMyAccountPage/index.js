@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Icon } from "semantic-ui-react";
+import { Button, Icon, Card, Image } from "semantic-ui-react";
 import SearchProducts from "../SearchProducts";
 import RegisterLogin from "../RegisterLogin";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
@@ -40,7 +40,17 @@ class UserMyAccountPage extends React.Component {
             component={RegisterLogin}
           />
         </div>
-        <h1>User View My Account Page</h1>
+        <Card>
+          <Image src="/images/avatar/large/daniel.jpg" wrapped ui={false} />
+          <Card.Content>
+            <Card.Header> -- insert user name here --</Card.Header>
+          </Card.Content>
+          <Card.Content extra>
+            <a>
+              <Button secondary>Log Out</Button>
+            </a>
+          </Card.Content>
+        </Card>
       </div>
     );
   }
