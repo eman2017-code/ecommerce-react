@@ -6,7 +6,6 @@ import iphone11 from "./iphone11Pro.png";
 import SearchProducts from "./SearchProducts";
 import AllProducts from "./AllProducts";
 import RegisterLogin from "./RegisterLogin";
-// import UserMyAccountPage from "./UserMyAccountPage";
 
 class App extends React.Component {
   constructor() {
@@ -31,26 +30,38 @@ class App extends React.Component {
             render={() => {
               return (
                 <div>
-                  <h3>ecommerce site</h3>
-                  <div className="top">
-                    <Button secondary>Wish List</Button>
+                  <div className="topNav">
+                    <h2>Welcome to Ecommerce Store</h2>
+                  </div>
+                  <div className="topNavButtons">
+                    <Button secondary size="large">
+                      Wish List
+                    </Button>
                     <Link to="/register-login">
-                      <Button secondary>My Account</Button>
+                      <Button secondary size="large">
+                        My Account
+                      </Button>
                     </Link>
                   </div>
-                  <p>logo</p>
-                  <div className="nav">
-                    <Button>
-                      <Icon name="shopping cart" />
-                    </Button>
-                    <SearchProducts />
-
+                  <div className="bottomNav">
+                    <Icon.Group size="huge" className="logo">
+                      <Icon name="puzzle" />
+                    </Icon.Group>
+                    <h1 className="websiteName">PRO - SELL</h1>
                     <Link to="/home">
-                      <Button secondary>Home</Button>
+                      <Button secondary size="huge">
+                        Home
+                      </Button>
                     </Link>
                     <Link to="/products">
-                      <Button secondary>Products</Button>
+                      <Button secondary size="huge">
+                        Products
+                      </Button>
                     </Link>
+                    <SearchProducts />
+                    <Button>
+                      <Icon name="shopping cart" size="huge" />
+                    </Button>
                   </div>
                   <div className="img">
                     <h1>Shop Now</h1>
@@ -73,9 +84,6 @@ class App extends React.Component {
             strict
             component={RegisterLogin}
           />
-          {/* <div>
-            <UserMyAccountPage />
-          </div> */}
         </div>
       </Router>
     );

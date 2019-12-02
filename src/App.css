@@ -8,14 +8,40 @@ body {
   background-repeat: no-repeat;
 }
 
-.top {
+.topNav {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.topNavButtons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin-right: 5%;
+  padding: 0.5%;
+}
+
+.bottomNav {
+  margin-top: 3%;
+  display: flex;
+  align-items: baseline;
   justify-content: flex-end;
 }
 
-.nav {
-  display: flex;
-  flex-direction: row-reverse;
+.websiteName {
+  border: 3px solid black;
+  padding: 0.5%;
+  width: 10%;
+  flex-grow: 1;
+  margin-right: 40%;
+  height: 10vh;
+  text-align: center;
+}
+
+.logo {
+  flex-grow: 1;
+  margin: 0px;
 }
 
 .img {
@@ -28,10 +54,6 @@ body {
 
 .arrow {
   padding: 10%;
-}
-
-h1 {
-  margin-right: 3%;
 }
 
 form {
