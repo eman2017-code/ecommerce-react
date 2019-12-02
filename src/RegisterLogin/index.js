@@ -108,24 +108,32 @@ class RegisterLogin extends React.Component {
                   <Checkbox />
                   <br></br>
                   <br></br>
-                  <Label>Email:</Label>
+                  <Label>First Name:</Label>
                   <Divider hidden />
                   <Form.Input
                     type="email"
                     name="email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
+                    // value={this.state.email}
+                    // onChange={this.handleChange}
+                  ></Form.Input>
+                  <Label>Last Name:</Label>
+                  <Divider hidden />
+                  <Form.Input
+                    type="email"
+                    name="email"
+                    // value={this.state.email}
+                    // onChange={this.handleChange}
                   ></Form.Input>
                 </React.Fragment>
               ) : null}
 
-              <Label>Full Name:</Label>
+              <Label>Email:</Label>
               <Divider hidden />
               <Form.Input
                 type="text"
-                name="full_name"
-                value={this.state.full_name}
-                onChange={this.handleChange}
+                name="email"
+                // value={this.state.full_name}
+                // onChange={this.handleChange}
               ></Form.Input>
 
               <Label>Password:</Label>
