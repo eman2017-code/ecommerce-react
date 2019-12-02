@@ -6,6 +6,7 @@ body {
   background: linear-gradient(#d7e1ec, #ffffff);
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 5%;
 }
 
 .topNav {
@@ -46,7 +47,7 @@ body {
 
 .img {
   display: flex;
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
