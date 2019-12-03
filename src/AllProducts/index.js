@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import Route from "react-router-dom/Route";
+import { Route } from "react-router-dom";
 import { Button, Icon } from "semantic-ui-react";
 import SearchProducts from "../SearchProducts";
 import RegisterLogin from "../RegisterLogin";
