@@ -17,7 +17,7 @@ class MainPage extends React.Component {
         <div>
           <Nav />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={airpods} alt="air pods pro" className="img" />
           <h2>Electronics</h2>
         </div>
