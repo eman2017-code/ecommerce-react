@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   // create route to login and register
-  // register =
+  register =
 
   render() {
     return (
