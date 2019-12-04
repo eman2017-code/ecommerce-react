@@ -9,6 +9,7 @@ import {
 } from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import SearchProducts from "../SearchProducts";
+import Nav from "../Nav";
 
 class RegisterLogin extends React.Component {
   constructor() {
@@ -65,38 +66,8 @@ class RegisterLogin extends React.Component {
   render() {
     return (
       <div>
-        <div className="topNav">
-          <h2>Welcome to Ecommerce Store</h2>
-        </div>
-        <div className="topNavButtons">
-          <Button secondary size="large">
-            Wish List
-          </Button>
-          <Link to="/register-login">
-            <Button secondary size="large">
-              My Account
-            </Button>
-          </Link>
-        </div>
-        <div className="bottomNav">
-          <Icon.Group size="huge" className="logo">
-            <Icon name="puzzle" />
-          </Icon.Group>
-          <h1 className="websiteName">PRO - SELL</h1>
-          <Link to="/home">
-            <Button secondary size="huge">
-              Home
-            </Button>
-          </Link>
-          <Link to="/products">
-            <Button secondary size="huge">
-              Products
-            </Button>
-          </Link>
-          <SearchProducts />
-          <Button>
-            <Icon name="shopping cart" size="huge" />
-          </Button>
+        <div>
+          <Nav />
         </div>
         <div>
           <div>

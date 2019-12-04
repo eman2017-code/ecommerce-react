@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import { Button, Icon } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import SearchProducts from "../SearchProducts";
-import iphone11 from "../iphone11Pro.png";
+// import iphone11 from "../iphone11Pro.png";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
 
@@ -16,7 +16,7 @@ class Nav extends React.Component {
   render() {
     return (
       <Route
-        path="/home"
+        // path="/home"
         exact
         strict
         render={() => {
