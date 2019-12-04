@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import { Button } from "semantic-ui-react";
 import SearchProducts from "../SearchProducts";
 // import iphone11 from "../iphone11Pro.png";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
+import Button from "@material-ui/core/Button";
 
 class Nav extends React.Component {
   constructor() {
@@ -24,14 +24,14 @@ class Nav extends React.Component {
             <div className="container">
               <CenterFocusStrongIcon fontSize="large" color="primary" />
               <Link to="/home">
-                <Button secondary>Home</Button>
+                <Button color="primary">Home</Button>
               </Link>
               <Link to="/products">
-                <Button secondary>Products</Button>
+                <Button color="primary">Products</Button>
               </Link>
-              <Button secondary>Wish List</Button>
+              <Button color="primary">Wish List</Button>
               <Link to="/register-login">
-                <Button secondary>My Account</Button>
+                <Button color="primary">My Account</Button>
               </Link>
               <SearchProducts />
               <LocalMallOutlinedIcon fontSize="large" color="primary" />

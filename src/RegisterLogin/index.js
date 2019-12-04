@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Button,
-  Icon,
-  Form,
-  Label,
-  Divider,
-  Checkbox
-} from "semantic-ui-react";
+import { Button, Form, Label, Divider, Checkbox } from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import SearchProducts from "../SearchProducts";
 import Nav from "../Nav";
 
 class RegisterLogin extends React.Component {
