@@ -9,7 +9,9 @@ class App extends React.Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      loggedIn: false
+    };
   }
 
   // create route to login and register
