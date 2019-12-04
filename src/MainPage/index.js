@@ -17,17 +17,18 @@ class MainPage extends React.Component {
         <div>
           <Nav />
         </div>
-        <div className="img">
-          {/* <h1>Shop Now</h1> */}
+        <div class="image">
           <img src={airpods} alt="air pods pro" className="img" />
-          <div className="middleImgDiv">
-            <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
-            <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
-            <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
-          </div>
-          <div className="lastImgDiv">
-            <img src={yeezy} alt="yeezy" className="lastImg" />
-          </div>
+          <h2>Electronics</h2>
+        </div>
+        <div className="middleImgDiv">
+          <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
+          <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
+          <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
+        </div>
+        <h3>Trending Now</h3>
+        <div className="lastImgDiv">
+          <img src={yeezy} alt="yeezy" className="lastImg" />
         </div>
       </div>
     );
