@@ -1,5 +1,8 @@
 import React from "react";
 import Nav from "../Nav";
+import iphone11 from "../iphone11Pro.png";
+import airpods from "../airpods.webp";
+import yeezy from "../yeezy.jpg";
 
 class MainPage extends React.Component {
   constructor() {
@@ -14,12 +17,18 @@ class MainPage extends React.Component {
         <div>
           <Nav />
         </div>
-        <h1>main page with all the images</h1>
-        <h2>main page with all the images</h2>
-        <h3>main page with all the images</h3>
-        <h4>main page with all the images</h4>
-        <h5>main page with all the images</h5>
-        <h6>main page with all the images</h6>
+        <div className="img">
+          {/* <h1>Shop Now</h1> */}
+          <img src={airpods} alt="air pods pro" className="img" />
+          <div className="middleImgDiv">
+            <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
+            <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
+            <img src={iphone11} alt="Iphone 11 Pro Max" className="middleImg" />
+          </div>
+          <div className="lastImgDiv">
+            <img src={yeezy} alt="yeezy" className="lastImg" />
+          </div>
+        </div>
       </div>
     );
   }
