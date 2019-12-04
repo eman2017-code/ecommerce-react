@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AllProducts from "./AllProducts";
 import RegisterLogin from "./RegisterLogin";
 import Nav from "./Nav";
+import MainPage from "./MainPage";
 
 class App extends React.Component {
   constructor() {
@@ -16,7 +17,7 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Route path="/home" exact strict component={Nav} />
+          <Route path="/home" exact strict component={MainPage} />
           <Route path="/products" exact strict component={AllProducts} />
           <Route
             path="/register-login"

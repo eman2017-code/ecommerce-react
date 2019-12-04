@@ -16,30 +16,31 @@ class Nav extends React.Component {
   render() {
     return (
       <Route
-        // path="/home"
         exact
         strict
         render={() => {
           return (
-            <div className="container">
-              <CenterFocusStrongIcon fontSize="large" color="primary" />
-              <Link to="/home">
-                <Button color="primary">Home</Button>
-              </Link>
-              <Link to="/products">
-                <Button color="primary">Products</Button>
-              </Link>
-              <Button color="primary">Wish List</Button>
-              <Link to="/register-login">
-                <Button color="primary">My Account</Button>
-              </Link>
-              <SearchProducts />
-              <LocalMallOutlinedIcon fontSize="large" color="primary" />
-              {/* <div className="img">
+            <div>
+              <div className="container">
+                <CenterFocusStrongIcon fontSize="large" color="primary" />
+                <Link to="/home">
+                  <Button color="primary">Home</Button>
+                </Link>
+                <Link to="/products">
+                  <Button color="primary">Products</Button>
+                </Link>
+                <Button color="primary">Wish List</Button>
+                <Link to="/register-login">
+                  <Button color="primary">My Account</Button>
+                </Link>
+                <SearchProducts />
+                <LocalMallOutlinedIcon fontSize="large" color="primary" />
+                {/* <div className="img">
                 <h1>Shop Now</h1>
                 <img src={iphone11} alt="Iphone 11 Pro Max" />
                 <Icon link name="right arrow" className="arrow" />
               </div> */}
+              </div>
             </div>
           );
         }}
