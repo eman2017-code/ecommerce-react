@@ -28,7 +28,7 @@ class Nav extends React.Component {
                 <Link to="/products">
                   <Button color="primary">Products</Button>
                 </Link>
-                <Button color="primary">Wish List</Button>
+                {/* <Button color="primary">Wish List</Button> */}
                 <Link to="/register-login">
                   <Button color="primary">My Account</Button>
                 </Link>

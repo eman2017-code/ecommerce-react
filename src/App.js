@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AllProducts from "./AllProducts";
 import RegisterLogin from "./RegisterLogin";
-import Nav from "./Nav";
 import MainPage from "./MainPage";
 
 class App extends React.Component {
