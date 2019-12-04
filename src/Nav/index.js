@@ -4,6 +4,8 @@ import SearchProducts from "../SearchProducts";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
 import Button from "@material-ui/core/Button";
+import grey from "@material-ui/core/colors/grey";
+const greyColor = grey[50];
 
 class Nav extends React.Component {
   constructor() {
@@ -28,12 +30,10 @@ class Nav extends React.Component {
                 <Link to="/products">
                   <Button color="primary">Products</Button>
                 </Link>
-                {/* <Button color="primary">Wish List</Button> */}
-                <Link to="/register-login">
-                  <Button color="primary">My Account</Button>
-                </Link>
                 <SearchProducts />
-                <LocalMallOutlinedIcon fontSize="large" color="primary" />
+                <Link to="/register-login">
+                  <LocalMallOutlinedIcon fontSize="large" color="primary" />
+                </Link>
               </div>
             </div>
           );

@@ -12,6 +12,9 @@ class App extends React.Component {
     this.state = {};
   }
 
+  // create route to login and register
+  // register =
+
   render() {
     return (
       <Router>
