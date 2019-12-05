@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import AllProducts from "./AllProducts";
+import UserAllProducts from "./UserAllProducts";
 import RegisterLogin from "./RegisterLogin";
 import MainPage from "./MainPage";
 
@@ -75,7 +75,12 @@ class App extends React.Component {
       <Router>
         <div>
           <Route path="/home" exact strict component={MainPage} />
-          <Route path="/products" exact strict component={AllProducts} />
+          <Route
+            path="/products-user"
+            exact
+            strict
+            component={UserAllProducts}
+          />
           <Route
             path="/register-login"
             render={props => (

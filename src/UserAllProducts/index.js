@@ -3,7 +3,7 @@ import Nav from "../Nav";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
-class AllProducts extends React.Component {
+class UserAllProducts extends React.Component {
   constructor() {
     super();
 
@@ -22,4 +22,4 @@ class AllProducts extends React.Component {
   }
 }
 
-export default AllProducts;
+export default UserAllProducts;
