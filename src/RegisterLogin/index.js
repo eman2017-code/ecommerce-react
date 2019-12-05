@@ -81,7 +81,7 @@ class RegisterLogin extends React.Component {
                 <React.Fragment>
                   <br></br>
                   <Label>Become a Seller:</Label>
-                  <Checkbox onClick={this.admin} />
+                  <Checkbox admin="admin" onClick={this.admin} />
                   <br></br>
                   <br></br>
                   <Label>First Name:</Label>
