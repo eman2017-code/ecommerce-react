@@ -12,7 +12,7 @@ class App extends React.Component {
 
     this.state = {
       loggedIn: false,
-      admin: false
+      admin: true
     };
   }
 
@@ -30,8 +30,6 @@ class App extends React.Component {
       }
     );
     const parsedLoginResponse = await response.json();
-    console.log("parsedLoginResponse -- register");
-    console.log(parsedLoginResponse);
     // check if the user is an admin
     if (parsedLoginResponse.data.admin === true) {
       this.setState({
@@ -68,14 +66,11 @@ class App extends React.Component {
     );
     // parse the reponse
     const parsedLoginResponse = await response.json();
-    console.log("parsedLoginResponse -- login");
-    console.log(parsedLoginResponse);
     if (parsedLoginResponse.data.admin === true) {
       this.setState({
         loggedIn: true,
         admin: true
       });
-      console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -95,18 +90,6 @@ class App extends React.Component {
       <Router>
         <div>
           <Route path="/home" exact strict component={MainPage} />
-          {/* <Route
-            path="/products-user"
-            exact
-            strict
-            component={UserAllProducts}
-          /> */}
-          {/* <Route
-            path="/products-user"
-            exact
-            strict
-            component={AdminAllProducts}
-          /> */}
           {this.state.admin ? (
             <Route
               path="/products-user"

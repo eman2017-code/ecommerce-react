@@ -14,8 +14,10 @@ class AdminAllProducts extends React.Component {
       <div>
         <Nav />
         <h1>Admin Page for common user</h1>
-        <Link to="/">
-          <Button color="primary">Add Product</Button>
+        <Link to="">
+          <Button variant="contained" color="primary">
+            Add Product
+          </Button>
         </Link>
       </div>
     );
