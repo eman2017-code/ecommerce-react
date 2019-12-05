@@ -1,12 +1,13 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
+import ListProducts from "../ListProducts";
 
 class ProductFunctionality extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      products: ["emmanuel miller"]
+      products: []
     };
   }
 
@@ -37,7 +38,7 @@ class ProductFunctionality extends React.Component {
   };
 
   render() {
-    return <div>{this.listProducts()}</div>;
+    return <ListProducts products={this.state.products} />;
   }
 }
 
