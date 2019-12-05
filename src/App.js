@@ -41,34 +41,34 @@ class App extends React.Component {
     }
   };
 
-  // // login route
-  // login = async loginInfo => {
-  //   const response = await fetch(
-  //     process.env.REACT_APP_API_URL + "/api/v1/users/login",
-  //     {
-  //       method: "POST",
-  //       credentials: "include",
-  //       body: JSON.stringify(loginInfo),
-  //       header: {
-  //         "Content-Type": "application/json"
-  //       }
-  //     }
-  //   );
-  //   // parse the reponse
-  //   const parsedLoginResponse = await response.json();
-  //   console.log("parsedLoginResponse");
-  //   console.log(parsedLoginResponse);
-  //   // if the response is good
-  //   if (response.ok) {
-  //     this.setState({
-  //       loggedIn: true
-  //     });
-  //     console.log("they are logged in");
-  //   } else {
-  //     console.log("Login Failed");
-  //     console.log(parsedLoginResponse);
-  //   }
-  // };
+  // login route
+  login = async loginInfo => {
+    const response = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/users/login",
+      {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(loginInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    // parse the reponse
+    const parsedLoginResponse = await response.json();
+    console.log("parsedLoginResponse");
+    console.log(parsedLoginResponse);
+    // if the response is good
+    if (response.ok) {
+      this.setState({
+        loggedIn: true
+      });
+      console.log("they are logged in");
+    } else {
+      console.log("Login Failed");
+      console.log(parsedLoginResponse);
+    }
+  };
 
   render() {
     return (
@@ -76,12 +76,6 @@ class App extends React.Component {
         <div>
           <Route path="/home" exact strict component={MainPage} />
           <Route path="/products" exact strict component={AllProducts} />
-          {/* <Route
-            path="/register-login"
-            exact
-            strict
-            component={RegisterLogin}
-          /> */}
           <Route
             path="/register-login"
             render={props => (
