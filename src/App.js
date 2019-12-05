@@ -16,8 +16,6 @@ class App extends React.Component {
 
   // register route
   register = async registerInfo => {
-    console.log("register Info");
-    console.log(registerInfo);
     const response = await fetch(
       process.env.REACT_APP_API_URL + "/api/v1/users/register",
       {
@@ -32,10 +30,11 @@ class App extends React.Component {
     const parsedLoginResponse = await response.json();
 
     // if the response is good
-    if (parsedLoginResponse.status.code === response.ok) {
+    if (response.ok) {
       this.setState({
         loggedIn: true
       });
+      console.log("you have successfully registered");
     } else {
       console.log("Registration Failed!");
       console.log(parsedLoginResponse);
@@ -58,7 +57,7 @@ class App extends React.Component {
     // parse the reponse
     const parsedLoginResponse = await response.json();
     // if the response is good
-    if (parsedLoginResponse.status.code === response.ok) {
+    if (response.ok) {
       this.setState({
         loggedIn: true
       });
