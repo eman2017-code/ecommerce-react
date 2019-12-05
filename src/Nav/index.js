@@ -4,8 +4,6 @@ import SearchProducts from "../SearchProducts";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
 import Button from "@material-ui/core/Button";
-import grey from "@material-ui/core/colors/grey";
-const greyColor = grey[50];
 
 class Nav extends React.Component {
   constructor() {
