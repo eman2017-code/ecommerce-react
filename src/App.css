@@ -67,3 +67,9 @@ h3 {
 .lastImg {
   padding: 3%;
 }
+
+.adminDashboardHeader {
+  background-color: #90caf9;
+  margin: 0px;
+  padding: 2%;
+}

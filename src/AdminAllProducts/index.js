@@ -13,12 +13,12 @@ class AdminAllProducts extends React.Component {
     return (
       <div>
         <Nav />
-        <h1>Admin Page for common user</h1>
-        <Link to="">
+        <h1 className="adminDashboardHeader">Admin Dashboard</h1>
+        {/* <Link to="">
           <Button variant="contained" color="primary">
             Add Product
           </Button>
-        </Link>
+        </Link> */}
       </div>
     );
   }
