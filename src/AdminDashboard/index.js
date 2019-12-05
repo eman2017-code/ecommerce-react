@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../Nav";
+import ProductFunctionality from "../ProductFunctionality";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,8 +13,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { MainListItems } from "../MainListItems";
-// import ListAllProducts from "../ListAllProducts";
+import { MainListItems } from "../SideBarAdmin";
 
 const drawerWidth = 240;
 
@@ -143,7 +143,9 @@ export default function Dashboard() {
                 <Paper className={fixedHeightPaper}>{/* <Deposits /> */}</Paper>
               </Grid>
               <Grid item xs={12}>
-                <Paper className={classes.paper}>{/* <Orders /> */}</Paper>
+                <Paper className={classes.paper}>
+                  <ProductFunctionality />
+                </Paper>
               </Grid>
             </Grid>
           </Container>
