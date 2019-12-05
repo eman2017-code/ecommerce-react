@@ -14,8 +14,10 @@ class App extends React.Component {
     };
   }
 
-  // create route to login and register
+  // register route
   register = async registerInfo => {
+    console.log("register Info");
+    console.log(registerInfo);
     const response = await fetch(
       process.env.REACT_APP_API_URL + "/api/v1/users/register",
       {
@@ -40,7 +42,7 @@ class App extends React.Component {
     }
   };
 
-  // create route for the user to login
+  // login route
   login = async loginInfo => {
     const response = await fetch(
       process.env.REACT_APP_API_URL + "/api/v1/users/login",
@@ -72,12 +74,21 @@ class App extends React.Component {
         <div>
           <Route path="/home" exact strict component={MainPage} />
           <Route path="/products" exact strict component={AllProducts} />
-          <Route
-            login={this.login}
+          {/* <Route
             path="/register-login"
             exact
             strict
             component={RegisterLogin}
+          /> */}
+          <Route
+            path="/register-login"
+            render={props => (
+              <RegisterLogin
+                {...props}
+                login={this.login}
+                register={this.register}
+              />
+            )}
           />
         </div>
       </Router>

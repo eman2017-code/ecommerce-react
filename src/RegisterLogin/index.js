@@ -8,40 +8,53 @@ class RegisterLogin extends React.Component {
     super();
 
     this.state = {
-      full_name: "",
+      first_name: "",
+      last_name: "",
       email: "",
       password: "",
-      isSeller: false,
+      admin: false,
       action: "login"
     };
   }
 
-  //   // handle change method for each section user inputs
-  //   handleChange = e => {
-  //     this.setState({
-  //       [e.target.name]: e.target.value
-  //     });
-  //   };
+  // handle change method for each section user inputs
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
-  //   handleSubmit = e => {
-  //     e.preventDefault();
-  //     this.loginRegister();
-  //   };
+  // handle the submit of the form
+  handleSubmit = e => {
+    e.preventDefault();
+    this.loginRegister();
+  };
 
-  //   loginRegister = () => {
-  //     if (this.state.action === "login") {
-  //       this.props.login({
-  //         full_name: this.state.full_name,
-  //         password: this.state.password
-  //       });
-  //     } else {
-  //       this.props.register({
-  //         full_name: this.state.full_name,
-  //         email: this.state.email,
-  //         password: this.state.password
-  //       });
-  //     }
-  //   };
+  // isSeller method
+  admin = () => {
+    this.setState({
+      admin: true
+    });
+  };
+
+  loginRegister = () => {
+    if (this.state.action === "login") {
+      this.props.login({
+        // this is checking the email
+        email: this.state.email,
+        // this is checking the password
+        password: this.state.password
+      });
+    } else {
+      this.props.register({
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        email: this.state.email,
+        admin: this.state.admin,
+        password: this.state.password
+      });
+    }
+  };
 
   switchForm = () => {
     if (this.state.action === "login") {
@@ -68,24 +81,24 @@ class RegisterLogin extends React.Component {
                 <React.Fragment>
                   <br></br>
                   <Label>Become a Seller:</Label>
-                  <Checkbox />
+                  <Checkbox onClick={this.admin} />
                   <br></br>
                   <br></br>
                   <Label>First Name:</Label>
                   <Divider hidden />
                   <Form.Input
-                    type="email"
-                    name="email"
-                    // value={this.state.email}
-                    // onChange={this.handleChange}
+                    type="text"
+                    name="first_name"
+                    value={this.state.first_name}
+                    onChange={this.handleChange}
                   ></Form.Input>
                   <Label>Last Name:</Label>
                   <Divider hidden />
                   <Form.Input
-                    type="email"
-                    name="email"
-                    // value={this.state.email}
-                    // onChange={this.handleChange}
+                    type="text"
+                    name="last_name"
+                    value={this.state.last_name}
+                    onChange={this.handleChange}
                   ></Form.Input>
                 </React.Fragment>
               ) : null}
@@ -95,8 +108,8 @@ class RegisterLogin extends React.Component {
               <Form.Input
                 type="text"
                 name="email"
-                // value={this.state.full_name}
-                // onChange={this.handleChange}
+                value={this.state.email}
+                onChange={this.handleChange}
               ></Form.Input>
 
               <Label>Password:</Label>
