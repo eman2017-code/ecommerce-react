@@ -95,18 +95,33 @@ class App extends React.Component {
       <Router>
         <div>
           <Route path="/home" exact strict component={MainPage} />
-          <Route
+          {/* <Route
             path="/products-user"
             exact
             strict
             component={UserAllProducts}
-          />
+          /> */}
           {/* <Route
             path="/products-user"
             exact
             strict
             component={AdminAllProducts}
           /> */}
+          {this.state.admin ? (
+            <Route
+              path="/products-user"
+              exact
+              strict
+              component={AdminAllProducts}
+            />
+          ) : (
+            <Route
+              path="/products-user"
+              exact
+              strict
+              component={UserAllProducts}
+            />
+          )}
           <Route
             path="/register-login"
             render={props => (
@@ -121,32 +136,6 @@ class App extends React.Component {
       </Router>
     );
   }
-  // render() {
-  //   const componentToRender = () => {
-  //     // if they are the admin, bring them to the admin dashboard
-  //     if (this.state.admin) {
-  //       return (
-  //         <Route path="/products-admin" exact strict component={AllProducts} />
-  //       );
-  //     } else if (this.state.loggedIn) {
-  //       return (
-  //         // if they are a padawan, bring them to the padawan dashboard
-  //         <Route path="/home" exact strict component={MainPage} />
-  //       );
-  //     } else {
-  //       return (
-  //         // bring them to the loginRegister form
-  //         <Route path="/register-login" exact strict component={MainPage} />
-  //       );
-  //     }
-  //   };
-  //   // invoke method that shows which component to render
-  //   return (
-  //     <Router>
-  //       <div className="App">{componentToRender()}</div>
-  //     </Router>
-  //   );
-  // }
 }
 
 export default App;
