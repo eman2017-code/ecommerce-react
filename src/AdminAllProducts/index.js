@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { MainListItems } from "../MainListItems";
+// import ListAllProducts from "../ListAllProducts";
 
 const drawerWidth = 240;
 
