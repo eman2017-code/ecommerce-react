@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import UserAllProducts from "./UserAllProducts";
+import AdminAllProducts from "./AdminAllProducts";
 import RegisterLogin from "./RegisterLogin";
 import MainPage from "./MainPage";
 
@@ -29,25 +30,15 @@ class App extends React.Component {
       }
     );
     const parsedLoginResponse = await response.json();
+    console.log("parsedLoginResponse -- register");
     console.log(parsedLoginResponse);
-
-    // // if the response is good
-    // if (response.ok) {
-    //   this.setState({
-    //     loggedIn: true
-    //   });
-    //   console.log("you have successfully registered");
-    // } else {
-    //   console.log("Registration Failed!");
-    //   console.log(parsedLoginResponse);
-    // }
-
     // check if the user is an admin
     if (parsedLoginResponse.data.admin === true) {
       this.setState({
         loggedIn: true,
         admin: true
       });
+      console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -62,34 +53,42 @@ class App extends React.Component {
     }
   };
 
-  // // login route
-  // login = async loginInfo => {
-  //   const response = await fetch(
-  //     process.env.REACT_APP_API_URL + "/api/v1/users/login",
-  //     {
-  //       method: "POST",
-  //       credentials: "include",
-  //       body: JSON.stringify(loginInfo),
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       }
-  //     }
-  //   );
-  //   // parse the reponse
-  //   const parsedLoginResponse = await response.json();
-  //   console.log("parsedLoginResponse");
-  //   console.log(parsedLoginResponse);
-  //   // if the response is good
-  //   if (response.ok) {
-  //     this.setState({
-  //       loggedIn: true
-  //     });
-  //     console.log("they are logged in");
-  //   } else {
-  //     console.log("Login Failed");
-  //     console.log(parsedLoginResponse);
-  //   }
-  // };
+  // login route
+  login = async loginInfo => {
+    const response = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/users/login",
+      {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(loginInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    // parse the reponse
+    const parsedLoginResponse = await response.json();
+    console.log("parsedLoginResponse -- login");
+    console.log(parsedLoginResponse);
+    if (parsedLoginResponse.data.admin === true) {
+      this.setState({
+        loggedIn: true,
+        admin: true
+      });
+      console.log(this.state);
+    } else {
+      // if they are not an admin
+      if (response.ok) {
+        this.setState({
+          logged: true,
+          admin: false
+        });
+      } else {
+        // print out the error
+        console.log(parsedLoginResponse);
+      }
+    }
+  };
 
   render() {
     return (
@@ -102,6 +101,12 @@ class App extends React.Component {
             strict
             component={UserAllProducts}
           />
+          {/* <Route
+            path="/products-user"
+            exact
+            strict
+            component={AdminAllProducts}
+          /> */}
           <Route
             path="/register-login"
             render={props => (
