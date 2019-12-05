@@ -13,9 +13,10 @@ class AllProducts extends React.Component {
     return (
       <div>
         <Nav />
-        <Link to="/">
+        {/* <Link to="/">
           <Button color="primary">Add Product</Button>
-        </Link>
+        </Link> */}
+        <h1>Product Page for common user</h1>
       </div>
     );
   }
