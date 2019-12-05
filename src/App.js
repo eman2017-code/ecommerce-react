@@ -75,7 +75,7 @@ class App extends React.Component {
       <Router>
         <div>
           <Route path="/home" exact strict component={MainPage} />
-          <Route path="/products" exact strict component={AllProducts} />
+          <Route path="/products-admin" exact strict component={AllProducts} />
           <Route
             path="/register-login"
             render={props => (

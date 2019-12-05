@@ -1,5 +1,7 @@
 import React from "react";
 import Nav from "../Nav";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 class AllProducts extends React.Component {
   constructor() {
@@ -11,7 +13,9 @@ class AllProducts extends React.Component {
     return (
       <div>
         <Nav />
-        <h1>product page</h1>
+        <Link to="/">
+          <Button color="primary">Add Product</Button>
+        </Link>
       </div>
     );
   }

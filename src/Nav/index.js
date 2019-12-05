@@ -25,7 +25,7 @@ class Nav extends React.Component {
                 <Link to="/home">
                   <Button color="primary">Home</Button>
                 </Link>
-                <Link to="/products">
+                <Link to="/products-admin">
                   <Button color="primary">Products</Button>
                 </Link>
                 <SearchProducts />
