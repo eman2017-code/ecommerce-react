@@ -14,31 +14,31 @@ class App extends React.Component {
     };
   }
 
-  // // create route to login and register
-  // register = async registerInfo => {
-  //   const response = await fetch(
-  //     process.env.REACT_APP_API_URL + "/api/v1/users/register",
-  //     {
-  //       method: "POST",
-  //       credentials: "include",
-  //       body: JSON.stringify(registerInfo),
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       }
-  //     }
-  //   );
-  //   const parsedLoginResponse = await response.json();
+  // create route to login and register
+  register = async registerInfo => {
+    const response = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/users/register",
+      {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(registerInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    const parsedLoginResponse = await response.json();
 
-  //   // if the response is good
-  //   if (parsedLoginResponse.status.code === response.ok) {
-  //     this.setState({
-  //       loggedIn: true
-  //     });
-  //   } else {
-  //     console.log("Registration Failed!");
-  //     console.log(parsedLoginResponse);
-  //   }
-  // };
+    // if the response is good
+    if (parsedLoginResponse.status.code === response.ok) {
+      this.setState({
+        loggedIn: true
+      });
+    } else {
+      console.log("Registration Failed!");
+      console.log(parsedLoginResponse);
+    }
+  };
 
   // create route for the user to login
   login = async loginInfo => {
