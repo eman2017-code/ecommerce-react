@@ -18,6 +18,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import SideBarAdmin from "../SideBarAdmin";
 import Nav from "../Nav";
 import ProductFunctionalityAdmin from "../ProductFunctionalityAdmin";
+import Chart from "../Chart";
 
 const drawerWidth = 240;
 
@@ -160,7 +161,7 @@ export default function Dashboard(props) {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>{/* <Chart /> */}</Paper>
+              <Paper className={fixedHeightPaper}>{<Chart />}</Paper>
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
