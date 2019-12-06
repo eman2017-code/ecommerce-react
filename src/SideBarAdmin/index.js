@@ -9,18 +9,68 @@ import BarChartIcon from "@material-ui/icons/BarChart";
 // import ProductFunctionalityAdmin from "../ProductFunctionalityAdmin";
 
 class SideBarAdmin extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      products: this.props.products
+      products: []
     };
   }
 
   componentDidMount() {
     console.log("this.state.products");
     console.log(this.state.products);
+    this.getProducts();
   }
+
+  // create function to see all the products that are in th database
+  getProducts = async () => {
+    try {
+      const products = await fetch(
+        // fetch call to the api
+        process.env.REACT_APP_API_URL + "/api/v1/products/",
+        {
+          // cookie session
+          credentials: "include"
+        }
+      );
+      // convert them into json
+      const parsedProducts = await products.json();
+
+      this.setState({
+        products: parsedProducts.data
+      });
+    } catch (err) {}
+  };
+
+  // method to create a product
+  addProduct = async (e, productFromForm) => {
+    //prevents the browser from reloading when an event is called...
+    e.preventDefault();
+    try {
+      //Call the array of all of the courses in the DB.
+      const createdProductResponse = await fetch(
+        process.env.REACT_APP_API_URL + "/api/v1/products/",
+        {
+          method: "POST",
+          credentials: "include",
+          body: JSON.stringify(productFromForm),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const parsedResponse = await createdProductResponse.json();
+      //push all courses + added course into state.
+      this.setState({
+        courses: [...this.state.products, parsedResponse.data]
+      });
+
+      this.setState({
+        addProduct: false
+      });
+    } catch (err) {}
+  };
 
   render() {
     return (

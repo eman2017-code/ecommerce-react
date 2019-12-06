@@ -38,7 +38,7 @@ class App extends React.Component {
         admin: true,
         loggedInUser: parsedLoginResponse.data
       });
-      console.log(this.state);
+      // console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -49,10 +49,10 @@ class App extends React.Component {
         });
       } else {
         // print out the error
-        console.log(parsedLoginResponse);
+        // console.log(parsedLoginResponse);
       }
     }
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   // login route
@@ -89,7 +89,7 @@ class App extends React.Component {
         console.log(parsedLoginResponse);
       }
     }
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
