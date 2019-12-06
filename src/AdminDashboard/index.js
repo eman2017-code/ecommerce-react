@@ -13,7 +13,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { MainListItems } from "../SideBarAdmin";
+import SideBarAdmin from "../SideBarAdmin";
 import App from "../App";
 
 const drawerWidth = 240;
@@ -131,7 +131,9 @@ export default function Dashboard(props) {
             </IconButton>
           </div>
           <Divider />
-          <List>{MainListItems}</List>
+          <List>
+            <SideBarAdmin />
+          </List>
           <Divider />
         </Drawer>
         <main className={classes.content}>
