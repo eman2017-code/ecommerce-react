@@ -1,6 +1,7 @@
 import React from "react";
 import ListProductAdmin from "../ListProductAdmin";
 import App from "../App";
+import SideBarAdmin from "../SideBarAdmin";
 
 class ProductFunctionalityAdmin extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class ProductFunctionalityAdmin extends React.Component {
 
     this.state = {
       products: [],
-      loggedInUser: this.props.loggedInUser
+      loggedInUser: this.props.loggedInUser,
+      addProduct: false
     };
   }
 
@@ -42,37 +44,40 @@ class ProductFunctionalityAdmin extends React.Component {
     } catch (err) {}
   };
 
-  // // method for admin to create a product
-  // addProduct = async (e, createProductForm) => {
-  //   // stop the server
-  //   e.preventDefault();
-  //   try {
-  //     const createdProductResponse = await fetch(
-  //       process.env.REACT_APP_API_URL + "/api/v1/products/",
-  //       {
-  //         method: "POST",
-  //         credentials: "include",
-  //         // make the body JSON to send back to the server
-  //         body: JSON.stringify(createProductForm),
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }
-  //     );
-  //     // convert into json
-  //     const parsedResponse = await createdProductResponse.json();
+  // method to create a product
+  addProduct = async (e, productFromForm) => {
+    //prevents the browser from reloading when an event is called...
+    e.preventDefault();
+    try {
+      //Call the array of all of the courses in the DB.
+      const createdProductResponse = await fetch(
+        process.env.REACT_APP_API_URL + "/api/v1/products/",
+        {
+          method: "POST",
+          credentials: "include",
+          body: JSON.stringify(productFromForm),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const parsedResponse = await createdProductResponse.json();
+      //push all courses + added course into state.
+      this.setState({
+        courses: [...this.state.products, parsedResponse.data]
+      });
 
-  //     this.setState({
-  //       products: [...this.state.products, parsedResponse.data]
-  //     });
-
-  //     // this.setState({
-
-  //     // })
-  //   } catch (err) {}
-  // };
+      this.setState({
+        addProduct: false
+      });
+    } catch (err) {}
+  };
 
   render() {
+    // return [
+    //   <ListProductAdmin key={1} products={this.state.products} />,
+    //   <SideBarAdmin key={2} products={this.state.products} />
+    // ];
     return <ListProductAdmin products={this.state.products} />;
   }
 }
