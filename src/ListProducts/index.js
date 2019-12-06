@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Image } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 
 function ListProducts(props) {
   const products = props.products.map(product => {

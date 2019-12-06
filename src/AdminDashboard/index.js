@@ -146,7 +146,7 @@ export default function Dashboard(props) {
               </Grid>
               <Grid item xs={12}>
                 <Paper className={classes.paper}>
-                  <ProductFunctionality />
+                  <ProductFunctionality loggedInUser={props.loggedInUser} />
                 </Paper>
               </Grid>
             </Grid>
