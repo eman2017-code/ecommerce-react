@@ -37,12 +37,20 @@ class UserAllProducts extends React.Component {
     } catch (err) {}
   };
 
+  // show product route
+  showProduct = async () => {
+    console.log("they are clicking the show product route");
+  };
+
   render() {
     return (
       <div>
         <Nav />
         <h1 className="userDashboardHeader">PRO - SELL</h1>
-        <ListProductUser products={this.state.products} />
+        <ListProductUser
+          products={this.state.products}
+          showProduct={this.showProduct}
+        />
       </div>
     );
   }
