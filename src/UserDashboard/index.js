@@ -9,6 +9,8 @@ class UserAllProducts extends React.Component {
 
     this.state = {
       products: []
+      // create modal to show the product for a user to see
+      // showProduct: false
     };
   }
 
@@ -37,10 +39,25 @@ class UserAllProducts extends React.Component {
     } catch (err) {}
   };
 
-  // show product route
-  showProduct = async () => {
-    console.log("they are clicking the show product route");
-  };
+  // // show product route
+  // showProduct = async product_id => {
+  //   try {
+  //     const products = await fetch(
+  //       process.env.REACT_APP_API_URL +
+  //         "/api/v1/products/" +
+  //         this.state.products,
+  //       {
+  //         credentials: "include"
+  //       }
+  //     );
+  //     const parsedProducts = await products.json();
+
+  //     this.setState({
+  //       products: parsedProducts.dta
+  //     });
+  //     console.log(this.state);
+  //   } catch (err) {}
+  // };
 
   render() {
     return (
@@ -49,7 +66,7 @@ class UserAllProducts extends React.Component {
         <h1 className="userDashboardHeader">PRO - SELL</h1>
         <ListProductUser
           products={this.state.products}
-          showProduct={this.showProduct}
+          // showProduct={this.showProduct}
         />
       </div>
     );

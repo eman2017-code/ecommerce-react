@@ -1,7 +1,6 @@
 import React from "react";
 import ListProductAdmin from "../ListProductAdmin";
 import App from "../App";
-import SideBarAdmin from "../SideBarAdmin";
 
 class ProductFunctionalityAdmin extends React.Component {
   constructor(props) {
