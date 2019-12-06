@@ -20,7 +20,7 @@ class ProductFunctionality extends React.Component {
     try {
       const products = await fetch(
         // fetch call to the api
-        process.env.REACT_APP_API_URL + "/api/v1/products/",
+        process.env.REACT_APP_API_URL + "/api/v1/carts/",
         {
           // cookie session
           credentials: "include"

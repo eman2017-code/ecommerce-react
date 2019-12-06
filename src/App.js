@@ -12,7 +12,8 @@ class App extends React.Component {
 
     this.state = {
       loggedIn: false,
-      admin: true
+      admin: false,
+      loggedInUser: null
     };
   }
 
@@ -34,7 +35,8 @@ class App extends React.Component {
     if (parsedLoginResponse.data.admin === true) {
       this.setState({
         loggedIn: true,
-        admin: true
+        admin: true,
+        loggedInUser: this.state.loggedInUser
       });
       console.log(this.state);
     } else {
@@ -42,13 +44,15 @@ class App extends React.Component {
       if (response.ok) {
         this.setState({
           logged: true,
-          admin: false
+          admin: false,
+          loggedInUser: parsedLoginResponse.data
         });
       } else {
         // print out the error
         console.log(parsedLoginResponse);
       }
     }
+    console.log(this.state);
   };
 
   // login route
@@ -69,20 +73,23 @@ class App extends React.Component {
     if (parsedLoginResponse.data.admin === true) {
       this.setState({
         loggedIn: true,
-        admin: true
+        admin: true,
+        loggedInUser: this.state.loggedInUser
       });
     } else {
       // if they are not an admin
       if (response.ok) {
         this.setState({
           logged: true,
-          admin: false
+          admin: false,
+          loggedInUser: parsedLoginResponse.data
         });
       } else {
         // print out the error
         console.log(parsedLoginResponse);
       }
     }
+    console.log(this.state);
   };
 
   render() {
