@@ -10,8 +10,10 @@ function ListProductsAdmin(props) {
           <Card.Header>{product.name}</Card.Header>
           <Card.Description>{product.description}</Card.Description>
           <Card.Description>{product.price}</Card.Description>
+          <Button onClick={() => props.deleteProduct(product.id)}>
+            Delete
+          </Button>
           <Button>Edit</Button>
-          <Button>Delete</Button>
         </Card.Content>
       </Card>
     );

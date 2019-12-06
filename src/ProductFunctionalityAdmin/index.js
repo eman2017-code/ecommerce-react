@@ -44,41 +44,29 @@ class ProductFunctionalityAdmin extends React.Component {
     } catch (err) {}
   };
 
-  // // method to create a product
-  // addProduct = async (e, productFromForm) => {
-  //   //prevents the browser from reloading when an event is called...
-  //   e.preventDefault();
-  //   try {
-  //     //Call the array of all of the courses in the DB.
-  //     const createdProductResponse = await fetch(
-  //       process.env.REACT_APP_API_URL + "/api/v1/products/",
-  //       {
-  //         method: "POST",
-  //         credentials: "include",
-  //         body: JSON.stringify(productFromForm),
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }
-  //     );
-  //     const parsedResponse = await createdProductResponse.json();
-  //     //push all courses + added course into state.
-  //     this.setState({
-  //       courses: [...this.state.products, parsedResponse.data]
-  //     });
-
-  //     this.setState({
-  //       addProduct: false
-  //     });
-  //   } catch (err) {}
-  // };
+  // method to delete a product
+  deleteProduct = async id => {
+    const deletedProductResponse = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/products/" + id,
+      {
+        credentials: "include",
+        method: "DELETE"
+      }
+    );
+    // convert into json
+    const deletedProductParsed = await deletedProductResponse.json();
+    this.setState({
+      products: this.state.products.filter(product => product.id !== id)
+    });
+  };
 
   render() {
-    // return [
-    //   <ListProductAdmin key={1} products={this.state.products} />,
-    //   <SideBarAdmin key={2} products={this.state.products} />
-    // ];
-    return <ListProductAdmin products={this.state.products} />;
+    return (
+      <ListProductAdmin
+        products={this.state.products}
+        deleteProduct={this.deleteProduct}
+      />
+    );
   }
 }
 
