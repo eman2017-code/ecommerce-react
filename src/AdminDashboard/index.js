@@ -14,6 +14,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { MainListItems } from "../SideBarAdmin";
+import App from "../App";
 
 const drawerWidth = 240;
 
@@ -96,7 +97,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+  console.log(props);
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerClose = () => {

@@ -16,6 +16,7 @@ class ProductFunctionality extends React.Component {
 
   componentDidMount() {
     this.getProducts();
+    console.log(this.state);
   }
 
   // create method that will loop through all of the products
@@ -24,7 +25,7 @@ class ProductFunctionality extends React.Component {
       const products = await fetch(
         // fetch call to the api
         process.env.REACT_APP_API_URL +
-          "/api/v1/carts/" +
+          "/api/v1/products/" +
           this.state.loggedInUser,
         {
           // cookie session

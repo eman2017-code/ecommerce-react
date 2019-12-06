@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import UserAllProducts from "./UserDashboard";
-import AdminAllProducts from "./AdminDashboard";
+import AdminDashboard from "./AdminDashboard";
 import RegisterLogin from "./RegisterLogin";
 import MainPage from "./MainPage";
 
@@ -36,7 +36,7 @@ class App extends React.Component {
       this.setState({
         loggedIn: true,
         admin: true,
-        loggedInUser: this.state.loggedInUser
+        loggedInUser: parsedLoginResponse.data
       });
       console.log(this.state);
     } else {
@@ -74,7 +74,7 @@ class App extends React.Component {
       this.setState({
         loggedIn: true,
         admin: true,
-        loggedInUser: this.state.loggedInUser
+        loggedInUser: parsedLoginResponse.data
       });
     } else {
       // if they are not an admin
@@ -102,7 +102,12 @@ class App extends React.Component {
               path="/products-user"
               exact
               strict
-              component={AdminAllProducts}
+              render={props => (
+                <AdminDashboard
+                  {...props}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              )}
             />
           ) : (
             <Route
