@@ -2,7 +2,7 @@ import React from "react";
 import ListProducts from "../ListProducts";
 import App from "../App";
 
-class ProductFunctionality extends React.Component {
+class ProductFunctionalityAdmin extends React.Component {
   constructor(props) {
     super(props);
 
@@ -77,4 +77,4 @@ class ProductFunctionality extends React.Component {
   }
 }
 
-export default ProductFunctionality;
+export default ProductFunctionalityAdmin;

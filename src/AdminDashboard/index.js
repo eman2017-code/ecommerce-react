@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../Nav";
-import ProductFunctionality from "../ProductFunctionality";
+import ProductFunctionality from "../ProductFunctionalityAdmin";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
