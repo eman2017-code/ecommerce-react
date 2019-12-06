@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../Nav";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import ListProducts from "../ListProducts";
+import ListProductUser from "../ListProductUser";
 
 class UserAllProducts extends React.Component {
   constructor() {
@@ -42,7 +42,7 @@ class UserAllProducts extends React.Component {
       <div>
         <Nav />
         <h1>Product Page for common user</h1>
-        <ListProducts products={this.state.products} />
+        <ListProductUser products={this.state.products} />
       </div>
     );
   }
