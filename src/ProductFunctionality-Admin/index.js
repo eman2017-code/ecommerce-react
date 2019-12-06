@@ -13,34 +13,34 @@ class ProductFunctionality extends React.Component {
   }
 
   componentDidMount() {
-    this.getProducts();
+    // this.getProducts();
     console.log("this.state.loggedInUser");
     console.log(this.state.loggedInUser);
   }
 
-  // create method that will loop through all of the products
-  getProducts = async () => {
-    try {
-      const products = await fetch(
-        // fetch call to the api
-        process.env.REACT_APP_API_URL +
-          "/api/v1/products/" +
-          this.state.loggedInUser.id,
-        {
-          // cookie session
-          credentials: "include"
-        }
-      );
-      // convert them into json
-      const parsedProducts = await products.json();
-      console.log("parsedProducts");
-      console.log(parsedProducts);
+  // // create method that will loop through all of the products
+  // getProducts = async () => {
+  //   try {
+  //     const products = await fetch(
+  //       // fetch call to the api
+  //       process.env.REACT_APP_API_URL +
+  //         "/api/v1/products/" +
+  //         this.state.loggedInUser.id,
+  //       {
+  //         // cookie session
+  //         credentials: "include"
+  //       }
+  //     );
+  //     // convert them into json
+  //     const parsedProducts = await products.json();
+  //     console.log("parsedProducts");
+  //     console.log(parsedProducts);
 
-      this.setState({
-        products: parsedProducts.data
-      });
-    } catch (err) {}
-  };
+  //     this.setState({
+  //       products: parsedProducts.data
+  //     });
+  //   } catch (err) {}
+  // };
 
   // // method for admin to create a product
   // addProduct = async (e, createProductForm) => {
