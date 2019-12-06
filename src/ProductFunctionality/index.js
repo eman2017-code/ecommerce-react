@@ -1,13 +1,15 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
 import ListProducts from "../ListProducts";
+import App from "../App";
 
 class ProductFunctionality extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      products: []
+      products: [],
+      loggedInUser: this.props.loggedInUser
     };
   }
 
@@ -20,7 +22,9 @@ class ProductFunctionality extends React.Component {
     try {
       const products = await fetch(
         // fetch call to the api
-        process.env.REACT_APP_API_URL + "/api/v1/carts/",
+        process.env.REACT_APP_API_URL +
+          "/api/v1/carts/" +
+          this.state.loggedInUser,
         {
           // cookie session
           credentials: "include"
