@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Segment } from "semantic-ui-react";
+import { Button, Form, Segment, Label } from "semantic-ui-react";
 
 class CreateProduct extends Component {
   constructor(props) {
@@ -21,33 +21,37 @@ class CreateProduct extends Component {
   render() {
     return (
       <Segment>
-        <h4>Create Product</h4>
+        <h6>Create Product</h6>
         <Form onSubmit={e => this.props.addProduct(e, this.state)}>
+          <Label>Insert Picture</Label>
           <Form.Input
             type="text"
             name="picture"
             value={this.state.picture}
             onChange={this.handleChange}
           />
+          <Label>Name of Product</Label>
           <Form.Input
             type="text"
             name="name"
             value={this.state.name}
             onChange={this.handleChange}
           />
+          <Label>Insert Price</Label>
           <Form.Input
             type="number"
             name="price"
             value={this.state.price}
             onChange={this.handleChange}
           />
+          <Label>Insert Description</Label>
           <Form.Input
             type="text"
             name="description"
             value={this.state.description}
             onChange={this.handleChange}
           />
-
+          <Label>Insert Category</Label>
           <Form.Input
             type="text"
             name="category"

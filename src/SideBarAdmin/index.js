@@ -13,7 +13,8 @@ class SideBarAdmin extends React.Component {
     super();
 
     this.state = {
-      products: []
+      products: [],
+      addProduct: false
     };
   }
 
@@ -61,21 +62,20 @@ class SideBarAdmin extends React.Component {
         }
       );
       const parsedResponse = await createdProductResponse.json();
-      //push all courses + added course into state.
       this.setState({
-        courses: [...this.state.products, parsedResponse.data]
+        products: [...this.state.products, parsedResponse.data]
       });
 
-      this.setState({
-        addProduct: false
-      });
+      // this.setState({
+      //   addProduct: false
+      // });
     } catch (err) {}
   };
 
   render() {
     return (
       <div>
-        <ListItem button>
+        <ListItem button onClick={this.addProduct}>
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
