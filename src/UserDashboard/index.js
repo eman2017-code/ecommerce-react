@@ -41,7 +41,7 @@ class UserAllProducts extends React.Component {
     return (
       <div>
         <Nav />
-        <h1>Product Page for common user</h1>
+        <h1 className="userDashboardHeader">PRO - SELL</h1>
         <ListProductUser products={this.state.products} />
       </div>
     );
