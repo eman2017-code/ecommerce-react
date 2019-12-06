@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 // import ProductFunctionalityAdmin from "../ProductFunctionalityAdmin";
+import CreateProduct from "../CreateProduct";
 
 class SideBarAdmin extends React.Component {
   constructor() {
@@ -66,16 +67,26 @@ class SideBarAdmin extends React.Component {
         products: [...this.state.products, parsedResponse.data]
       });
 
-      // this.setState({
-      //   addProduct: false
-      // });
+      this.setState({
+        addProduct: false
+      });
     } catch (err) {}
+  };
+
+  // method to load form to create a product
+  loadForm = () => {
+    this.setState({
+      addProduct: true
+    });
   };
 
   render() {
     return (
       <div>
-        <ListItem button onClick={this.addProduct}>
+        <ListItem button onClick={this.loadForm}>
+          {this.state.addProduct ? (
+            <CreateProduct addProduct={this.addProduct} />
+          ) : null}
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
