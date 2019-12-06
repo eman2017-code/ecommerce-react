@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "semantic-ui-react";
 import ListProducts from "../ListProducts";
 import App from "../App";
+import { thisTypeAnnotation } from "@babel/types";
 
 class ProductFunctionality extends React.Component {
   constructor(props) {
@@ -40,6 +41,36 @@ class ProductFunctionality extends React.Component {
       });
     } catch (err) {}
   };
+
+  // // method for admin to create a product
+  // addProduct = async (e, createProductForm) => {
+  //   // stop the server
+  //   e.preventDefault();
+  //   try {
+  //     const createdProductResponse = await fetch(
+  //       process.env.REACT_APP_API_URL + "/api/v1/products/",
+  //       {
+  //         method: "POST",
+  //         credentials: "include",
+  //         // make the body JSON to send back to the server
+  //         body: JSON.stringify(createProductForm),
+  //         headers: {
+  //           "Content-Type": "application/json"
+  //         }
+  //       }
+  //     );
+  //     // convert into json
+  //     const parsedResponse = await createdProductResponse.json();
+
+  //     this.setState({
+  //       products: [...this.state.products, parsedResponse.data]
+  //     });
+
+  //     // this.setState({
+
+  //     // })
+  //   } catch (err) {}
+  // };
 
   render() {
     return <ListProducts products={this.state.products} />;
