@@ -1,5 +1,5 @@
 import React from "react";
-import ListProducts from "../ListProducts";
+import ListProductAdmin from "../ListProductAdmin";
 import App from "../App";
 
 class ProductFunctionalityAdmin extends React.Component {
@@ -73,7 +73,7 @@ class ProductFunctionalityAdmin extends React.Component {
   // };
 
   render() {
-    return <ListProducts products={this.state.products} />;
+    return <ListProductAdmin products={this.state.products} />;
   }
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
-function ListProducts(props) {
+function ListProductsAdmin(props) {
   const products = props.products.map(product => {
     return (
       <Card key={product.id}>
@@ -18,4 +18,4 @@ function ListProducts(props) {
   return <Card.Group>{products}</Card.Group>;
 }
 
-export default ListProducts;
+export default ListProductsAdmin;
