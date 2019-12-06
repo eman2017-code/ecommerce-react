@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import { Card, Image, Button } from "semantic-ui-react";
 
 function ListProductsAdmin(props) {
   const products = props.products.map(product => {
@@ -10,6 +10,8 @@ function ListProductsAdmin(props) {
           <Card.Header>{product.name}</Card.Header>
           <Card.Description>{product.description}</Card.Description>
           <Card.Description>{product.price}</Card.Description>
+          <Button>Edit</Button>
+          <Button>Delete</Button>
         </Card.Content>
       </Card>
     );
