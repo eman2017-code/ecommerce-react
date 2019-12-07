@@ -18,8 +18,6 @@ class SideBarAdmin extends React.Component {
   }
 
   componentDidMount() {
-    console.log("this.state.products");
-    console.log(this.state.products);
     this.getProducts();
   }
 

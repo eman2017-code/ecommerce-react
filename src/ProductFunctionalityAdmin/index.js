@@ -15,8 +15,6 @@ class ProductFunctionalityAdmin extends React.Component {
 
   componentDidMount() {
     this.getProducts();
-    console.log("this.state.loggedInUser");
-    console.log(this.state.loggedInUser);
   }
 
   // create method that will loop through all of the products
@@ -34,8 +32,6 @@ class ProductFunctionalityAdmin extends React.Component {
       );
       // convert them into json
       const parsedProducts = await products.json();
-      console.log("parsedProducts");
-      console.log(parsedProducts);
 
       this.setState({
         products: parsedProducts.data

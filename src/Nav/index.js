@@ -1,16 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import SearchProducts from "../SearchProducts";
-import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
 import Button from "@material-ui/core/Button";
 import Cart from "../Cart";
+import MainPage from "../MainPage";
+import ListProductUser from "../ListProductUser";
 
 class Nav extends React.Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      loggedIn: true
+    };
   }
 
   // log out method
@@ -28,7 +31,6 @@ class Nav extends React.Component {
       });
       console.log("logged out");
     } else {
-      console.log(parsedLogoutResponse);
     }
   };
 
