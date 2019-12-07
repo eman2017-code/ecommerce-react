@@ -38,7 +38,6 @@ class App extends React.Component {
         admin: true,
         loggedInUser: parsedLoginResponse.data
       });
-      // console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -48,49 +47,45 @@ class App extends React.Component {
           loggedInUser: parsedLoginResponse.data
         });
       } else {
-        // print out the error
-        // console.log(parsedLoginResponse);
       }
     }
-    // console.log(this.state);
   };
 
-  // login route
-  login = async loginInfo => {
-    const response = await fetch(
-      process.env.REACT_APP_API_URL + "/api/v1/users/login",
-      {
-        method: "POST",
-        credentials: "include",
-        body: JSON.stringify(loginInfo),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-    );
-    // parse the reponse
-    const parsedLoginResponse = await response.json();
-    if (parsedLoginResponse.data.admin === true) {
-      this.setState({
-        loggedIn: true,
-        admin: true,
-        loggedInUser: parsedLoginResponse.data
-      });
-    } else {
-      // if they are not an admin
-      if (response.ok) {
-        this.setState({
-          logged: true,
-          admin: false,
-          loggedInUser: parsedLoginResponse.data
-        });
-      } else {
-        // print out the error
-        console.log(parsedLoginResponse);
-      }
-    }
-    // console.log(this.state);
-  };
+  // // login route
+  // login = async loginInfo => {
+  //   const response = await fetch(
+  //     process.env.REACT_APP_API_URL + "/api/v1/users/login",
+  //     {
+  //       method: "POST",
+  //       credentials: "include",
+  //       body: JSON.stringify(loginInfo),
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       }
+  //     }
+  //   );
+  //   // parse the reponse
+  //   const parsedLoginResponse = await response.json();
+  //   if (parsedLoginResponse.data.admin === true) {
+  //     this.setState({
+  //       loggedIn: true,
+  //       admin: true,
+  //       loggedInUser: parsedLoginResponse.data
+  //     });
+  //   } else {
+  //     // if they are not an admin
+  //     if (response.ok) {
+  //       this.setState({
+  //         logged: true,
+  //         admin: false,
+  //         loggedInUser: parsedLoginResponse.data
+  //       });
+  //     } else {
+  //       // print out the error
+  //       console.log(parsedLoginResponse);
+  //     }
+  //   }
+  // };
 
   render() {
     return (
@@ -116,7 +111,7 @@ class App extends React.Component {
               path="/products-user"
               exact
               strict
-              component={UserAllProducts}
+              render={props => <UserAllProducts {...props} />}
             />
           )}
           <Route

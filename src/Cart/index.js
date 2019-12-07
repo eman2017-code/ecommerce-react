@@ -4,7 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 
-export default function Cart() {
+export default function Cart(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -31,9 +31,13 @@ export default function Cart() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Cart</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose} onClick={props.login}>
+          Login
+        </MenuItem>
+        <MenuItem onClick={handleClose} onClick={props.logout}>
+          Logout
+        </MenuItem>
       </Menu>
     </div>
   );
