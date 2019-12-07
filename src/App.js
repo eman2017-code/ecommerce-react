@@ -96,8 +96,10 @@ class App extends React.Component {
     return (
       <Router>
         <div>
+          {/* always show the main main page for a user */}
           <Route path="/home" exact strict component={MainPage} />
-          {this.state.admin ? (
+          {/* if they are an admin and logged in, bring them to the admin page or bring them to the landing page for a user */}
+          {this.state.admin && this.state.loggedIn ? (
             <Route
               path="/products-user"
               exact
