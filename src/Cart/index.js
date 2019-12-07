@@ -32,9 +32,6 @@ export default function Cart(props) {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>Cart</MenuItem>
-        <MenuItem onClick={handleClose} onClick={props.login}>
-          Login
-        </MenuItem>
         <MenuItem onClick={handleClose} onClick={props.logout}>
           Logout
         </MenuItem>

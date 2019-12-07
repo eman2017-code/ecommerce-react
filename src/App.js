@@ -51,41 +51,41 @@ class App extends React.Component {
     }
   };
 
-  // // login route
-  // login = async loginInfo => {
-  //   const response = await fetch(
-  //     process.env.REACT_APP_API_URL + "/api/v1/users/login",
-  //     {
-  //       method: "POST",
-  //       credentials: "include",
-  //       body: JSON.stringify(loginInfo),
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       }
-  //     }
-  //   );
-  //   // parse the reponse
-  //   const parsedLoginResponse = await response.json();
-  //   if (parsedLoginResponse.data.admin === true) {
-  //     this.setState({
-  //       loggedIn: true,
-  //       admin: true,
-  //       loggedInUser: parsedLoginResponse.data
-  //     });
-  //   } else {
-  //     // if they are not an admin
-  //     if (response.ok) {
-  //       this.setState({
-  //         logged: true,
-  //         admin: false,
-  //         loggedInUser: parsedLoginResponse.data
-  //       });
-  //     } else {
-  //       // print out the error
-  //       console.log(parsedLoginResponse);
-  //     }
-  //   }
-  // };
+  // login route
+  login = async loginInfo => {
+    const response = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/users/login",
+      {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(loginInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    // parse the reponse
+    const parsedLoginResponse = await response.json();
+    if (parsedLoginResponse.data.admin === true) {
+      this.setState({
+        loggedIn: true,
+        admin: true,
+        loggedInUser: parsedLoginResponse.data
+      });
+    } else {
+      // if they are not an admin
+      if (response.ok) {
+        this.setState({
+          logged: true,
+          admin: false,
+          loggedInUser: parsedLoginResponse.data
+        });
+      } else {
+        // print out the error
+        console.log(parsedLoginResponse);
+      }
+    }
+  };
 
   render() {
     return (
@@ -103,6 +103,7 @@ class App extends React.Component {
                 <AdminDashboard
                   {...props}
                   loggedInUser={this.state.loggedInUser}
+                  logout={this.logout}
                 />
               )}
             />
@@ -111,7 +112,9 @@ class App extends React.Component {
               path="/products-user"
               exact
               strict
-              render={props => <UserAllProducts {...props} />}
+              render={props => (
+                <UserAllProducts {...props} logout={this.logout} />
+              )}
             />
           )}
           <Route

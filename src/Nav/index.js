@@ -26,60 +26,11 @@ class Nav extends React.Component {
       this.setState({
         loggedIn: false
       });
-      console.log("they are logged out");
+      console.log("logged out");
     } else {
       console.log(parsedLogoutResponse);
     }
   };
-
-  // login route
-  login = async loginInfo => {
-    const response = await fetch(
-      process.env.REACT_APP_API_URL + "/api/v1/users/login",
-      {
-        method: "POST",
-        credentials: "include",
-        body: JSON.stringify(loginInfo),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-    );
-    // parse the reponse
-    const parsedLoginResponse = await response.json();
-    if (parsedLoginResponse.data.admin === true) {
-      this.setState({
-        loggedIn: true,
-        admin: true,
-        loggedInUser: parsedLoginResponse.data
-      });
-    } else {
-      // if they are not an admin
-      if (response.ok) {
-        this.setState({
-          logged: true,
-          admin: false,
-          loggedInUser: parsedLoginResponse.data
-        });
-      } else {
-        // print out the error
-        console.log(parsedLoginResponse);
-      }
-    }
-  };
-
-  // logout={this.logout}
-
-  //   <Route
-  //   path="/register-login"
-  //   render={props => (
-  //     <RegisterLogin
-  //       {...props}
-  //       login={this.login}
-  //       register={this.register}
-  //     />
-  //   )}
-  // />
 
   render() {
     return (
@@ -99,6 +50,9 @@ class Nav extends React.Component {
                 </Link>
                 <SearchProducts />
                 <Cart logout={this.logout} />
+                <Link to="/register-login">
+                  <Button color="primary">Login/Sign Up</Button>
+                </Link>
               </div>
             </div>
           );
