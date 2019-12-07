@@ -30,9 +30,6 @@ class Nav extends React.Component {
                   <Button color="primary">Products</Button>
                 </Link>
                 <SearchProducts />
-                {/* <Link to="/register-login">
-                  <LocalMallOutlinedIcon fontSize="large" color="primary" />
-                </Link> */}
                 <Cart />
               </div>
             </div>

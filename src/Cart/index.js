@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 
 export default function Cart() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -21,7 +22,7 @@ export default function Cart() {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        Open Menu
+        <LocalMallOutlinedIcon fontSize="large" color="primary" />
       </Button>
       <Menu
         id="simple-menu"
