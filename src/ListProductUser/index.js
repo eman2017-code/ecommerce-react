@@ -12,8 +12,6 @@ function ListProductUser(props) {
           <Card.Description>{product.price}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          {/* <Button onClick={() => props.showProduct()}>See More</Button> */}
-          <Button>See More</Button>
           <Button>Add to Cart</Button>
         </Card.Content>
       </Card>
