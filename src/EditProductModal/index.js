@@ -7,6 +7,7 @@ class EditProductModal extends React.Component {
     this.state = {
       picture: "",
       name: "",
+      price: "",
       description: "",
       category: ""
     };
@@ -16,10 +17,11 @@ class EditProductModal extends React.Component {
     // this does add a few extra properties to state
     // component did mount mounts data to form
     this.setState({
-      picture: this.props.courseToEdit.picture,
-      name: this.props.courseToEdit.name,
-      description: this.props.courseToEdit.description,
-      category: this.props.courseToEdit.category
+      picture: this.props.productToEdit.picture,
+      name: this.props.productToEdit.name,
+      price: this.props.productToEdit.price,
+      description: this.props.productToEdit.description,
+      category: this.props.productToEdit.category
     });
   }
 
@@ -57,6 +59,14 @@ class EditProductModal extends React.Component {
               type="text"
               name="name"
               value={this.state.name}
+              onChange={this.handleChange}
+            />
+
+            <Label> price: </Label>
+            <Form.Input
+              type="text"
+              name="price"
+              value={this.state.price}
               onChange={this.handleChange}
             />
 

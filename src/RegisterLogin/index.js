@@ -3,6 +3,7 @@ import { Button, Form, Label, Divider, Checkbox } from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Nav from "../Nav";
 import { Redirect } from "react-router-dom";
+import MainPage from "../MainPage";
 // import UserDashboard from "./UserDashboard";
 
 class RegisterLogin extends React.Component {
@@ -43,8 +44,8 @@ class RegisterLogin extends React.Component {
         admin: true,
         loggedInUser: parsedLoginResponse.data
       });
-      console.log("this.state -- admin register");
-      console.log(this.state);
+      // console.log("this.state -- admin register");
+      // console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -53,8 +54,8 @@ class RegisterLogin extends React.Component {
           admin: false,
           loggedInUser: parsedLoginResponse.data
         });
-        console.log("this.state -- register");
-        console.log(this.state);
+        // console.log("this.state -- register");
+        // console.log(this.state);
       } else {
       }
     }
@@ -81,8 +82,8 @@ class RegisterLogin extends React.Component {
         admin: true,
         loggedInUser: parsedLoginResponse.data
       });
-      console.log("this.state -- admin login");
-      console.log(this.state);
+      // console.log("this.state -- admin login");
+      // console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -91,8 +92,8 @@ class RegisterLogin extends React.Component {
           admin: false,
           loggedInUser: parsedLoginResponse.data
         });
-        console.log("this.state login");
-        console.log(this.state);
+        // console.log("this.state login");
+        // console.log(this.state);
       } else {
         // print out the error
         console.log(parsedLoginResponse);
@@ -161,7 +162,8 @@ class RegisterLogin extends React.Component {
           }}
         />
       );
-    } else if (this.state.logged === true) {
+    }
+    if (this.state.logged === true) {
       return (
         <Redirect
           to={{
@@ -170,7 +172,9 @@ class RegisterLogin extends React.Component {
           }}
         />
       );
-    } else {
+    }
+    if (this.state.logged === null) {
+      console.log("they are just browsing");
     }
     return (
       <div>

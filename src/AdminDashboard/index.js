@@ -15,7 +15,7 @@ import Paper from "@material-ui/core/Paper";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import SideBarAdmin from "../SideBarAdmin";
-import Nav from "../Nav";
+import NavAdmin from "../NavAdmin";
 import ProductFunctionalityAdmin from "../ProductFunctionalityAdmin";
 import Chart from "../Chart";
 import SearchProducts from "../SearchProducts";
@@ -102,6 +102,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function AdminDashboard(props) {
+  console.log("props");
   console.log(props);
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -134,7 +135,7 @@ export default function AdminDashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" className={classes.title}>
-            <Nav loggedInUser={props.location.state.loggedInUser} />
+            <NavAdmin loggedInUser={props.location.state.loggedInUser} />
           </Typography>
         </Toolbar>
       </AppBar>

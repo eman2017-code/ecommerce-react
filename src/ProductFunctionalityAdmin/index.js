@@ -14,6 +14,7 @@ class ProductFunctionalityAdmin extends React.Component {
       productToEdit: {
         picture: "",
         name: "",
+        price: "",
         description: "",
         category: ""
       },
@@ -23,7 +24,7 @@ class ProductFunctionalityAdmin extends React.Component {
 
   componentDidMount() {
     this.getProducts();
-    console.log("this.state");
+    console.log("this.state -- product functionality admin");
     console.log(this.state);
   }
 
@@ -67,16 +68,17 @@ class ProductFunctionalityAdmin extends React.Component {
 
   // method to edit product
   editProduct = idOfProductToEdit => {
-    console.log("you are hitting the edit button");
+    // console.log("you are hitting the edit button");
     const productToEdit = this.state.products.find(
       product => product.id === idOfProductToEdit
     );
+    console.log("productToEdit");
+    console.log(productToEdit);
+
     this.setState({
-      editCourseModal: true,
+      editProductModal: true,
       idOfProductToEdit: productToEdit.id,
-      productToEdit: {
-        ...productToEdit
-      }
+      productToEdit: productToEdit
     });
   };
 
@@ -93,22 +95,23 @@ class ProductFunctionalityAdmin extends React.Component {
   // actually update the product
   updateProduct = async newProductInfo => {
     try {
-      // hit our API to actually update it
-      const url =
+      const updateResponse = await fetch(
         process.env.REACT_APP_API_URL +
-        "/api/v1/products/" +
-        this.state.idOfProductToEdit;
-
-      const updateResponse = await fetch(url, {
-        method: "PUT",
-        credentials: "include",
-        body: JSON.stringify(newProductInfo),
-        headers: {
-          "Content-Type": "application/json"
+          "/api/v1/products/" +
+          this.state.idOfProductToEdit,
+        {
+          method: "PUT",
+          credentials: "include",
+          body: JSON.stringify(newProductInfo),
+          headers: {
+            "Content-Type": "application/json"
+          }
         }
-      });
+      );
 
       const updateResponseParsed = await updateResponse.json();
+      console.log("updateResponseParsed");
+      console.log(updateResponseParsed);
 
       const newProductArrayWithUpdate = this.state.products.map(product => {
         if (product.id === updateResponseParsed.data.id) {

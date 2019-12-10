@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CloudIcon from "@material-ui/icons/Cloud";
 
-class Nav extends React.Component {
+class NavAdmin extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,23 +36,23 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div className="navBar">
+      <div className="navBarAdmin">
         <CloudIcon />
         <Link to="/home">
           <button>Home</button>
         </Link>
-        <Link to="/browser">
+        {/* <Link to="/browser">
           <button>Products</button>
-        </Link>
-        <Link to="/cart">
+        </Link> */}
+        {/* <Link to="/cart">
           <button>Cart</button>
-        </Link>
-        <Link to="/register-login">
-          <button>Login/Regsiter</button>
+        </Link> */}
+        <Link to="/admin">
+          <button>My Account</button>
         </Link>
       </div>
     );
   }
 }
 
-export default Nav;
+export default NavAdmin;
