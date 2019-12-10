@@ -21,21 +21,6 @@ class App extends React.Component {
   }
 
   render() {
-    // const componentToRender = () => {
-    //   if (this.state.admin === true && this.state.loggedIn === true) {
-    //     // return <AdminDashboard />;
-    //     return <Route path="/admin" component={AdminDashboard} />;
-    //   } else if (this.state.loggedIn === true) {
-    //     // return <UserDashboard />;
-    //     return <Route path="/products" component={UserDashboard} />;
-    //   } else {
-    //     return (
-    //       <Route path="/register-login"
-    //       render={(props) => <RegisterLogin {...props} login={this.login} register={this.register}}
-    //     );
-    //   }
-    // };
-    // return <div>{componentToRender()}</div>;
     return <h1>hi</h1>;
   }
 }

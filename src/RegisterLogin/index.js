@@ -41,8 +41,6 @@ class RegisterLogin extends React.Component {
         admin: true,
         loggedInUser: parsedLoginResponse.data
       });
-      // console.log("this.state -- admin register");
-      // console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -51,8 +49,6 @@ class RegisterLogin extends React.Component {
           admin: false,
           loggedInUser: parsedLoginResponse.data
         });
-        // console.log("this.state -- register");
-        // console.log(this.state);
       } else {
       }
     }
@@ -79,8 +75,6 @@ class RegisterLogin extends React.Component {
         admin: true,
         loggedInUser: parsedLoginResponse.data
       });
-      // console.log("this.state -- admin login");
-      // console.log(this.state);
     } else {
       // if they are not an admin
       if (response.ok) {
@@ -89,8 +83,6 @@ class RegisterLogin extends React.Component {
           admin: false,
           loggedInUser: parsedLoginResponse.data
         });
-        // console.log("this.state login");
-        // console.log(this.state);
       } else {
         // print out the error
         console.log(parsedLoginResponse);
@@ -150,6 +142,7 @@ class RegisterLogin extends React.Component {
   };
 
   render() {
+    // if they are logged in and an admin
     if (this.state.admin === true && this.state.loggedIn === true) {
       return (
         <Redirect
@@ -160,6 +153,7 @@ class RegisterLogin extends React.Component {
         />
       );
     }
+    // if they logged in and not an admin
     if (this.state.logged === true) {
       return (
         <Redirect
@@ -178,21 +172,6 @@ class RegisterLogin extends React.Component {
         <div>
           <Nav />
         </div>
-        {/* {this.state.admin === true && this.state.loggedIn === true ? (
-          <Redirect
-            to={{
-              pathname: "/admin",
-              state: { loggedInUser: this.state.loggedInUser }
-            }}
-          />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/register-login",
-              state: { loggedInUser: this.state.loggedInUser }
-            }}
-          />
-        )} */}
         <div>
           <div>
             <Form onSubmit={this.handleSubmit}>

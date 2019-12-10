@@ -36,9 +36,9 @@ class Nav extends React.Component {
   // };
 
   render() {
-    let ToRender;
+    let ToRenderProduct;
     if (this.state.loggedInUser !== undefined) {
-      ToRender = (
+      ToRenderProduct = (
         <Link
           to={{
             pathname: "/products",
@@ -49,7 +49,7 @@ class Nav extends React.Component {
         </Link>
       );
     } else {
-      ToRender = (
+      ToRenderProduct = (
         <Link
           to={{
             pathname: "/guest"
@@ -59,49 +59,25 @@ class Nav extends React.Component {
         </Link>
       );
     }
-    //   toRender = (
-    //     <Link
-    //       to={{
-    //         pathname: "/admin",
-    //         state: { loggedInUser: this.state.loggedInUser }
-    //       }}
-    //     />
-    //   );
-    //   toRender = <Link to="/guest" />;
-    // }
-    // if (this.state.admin === true && this.state.loggedIn === true) {
-    //   return (
-    //     <Redirect
-    //       to={{
-    //         pathname: "/admin",
-    //         state: { loggedInUser: this.state.loggedInUser }
-    //       }}
-    //     />
-    //   );
-    // }
-    // if (this.state.logged === true) {
-    //   return (
-    //     <Redirect
-    //       to={{
-    //         pathname: "/products",
-    //         state: { loggedInUser: this.state.loggedInUser }
-    //       }}
-    //     />
-    //   );
-    // }
+
     return (
       <div className="navBar">
-        {/* {this.state.loggedInUser === undefined ? } */}
-
         <CloudIcon />
-        <Link to="/home">
+        <Link
+          to={{
+            pathname: "/home",
+            state: {
+              loggedInUser: this.state.loggedInUser
+            }
+          }}
+        >
           <button>Home</button>
         </Link>
 
         {/* <Link to="/guest">
           <button>Products</button>
         </Link> */}
-        {ToRender}
+        {ToRenderProduct}
 
         {/* if the user is not logged in, the path will be '/guest'
             if the user is logged in and hits the product tab, they will be brought to '/products' */}

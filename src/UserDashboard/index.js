@@ -6,13 +6,13 @@ import SearchProducts from "../SearchProducts";
 
 class UserDashboard extends React.Component {
   constructor(props) {
-    // console.log("props");
-    // console.log(props);
+    console.log("props -- userDashboard");
+    console.log(props);
     super(props);
 
     this.state = {
       products: [],
-      loggedInUser: props.location.state.loggedInUser
+      loggedInUser: this.props.location.state.loggedInUser
       // create modal to show the product for a user to see
       // showProduct: false
     };
@@ -72,7 +72,7 @@ class UserDashboard extends React.Component {
         <h1 className="userDashboardHeader">PRO - SELL</h1>
         <ListProductUser
           products={this.state.products}
-          addToCart={this.addToCart}
+          // addToCart={this.addToCart}
         />
       </div>
     );

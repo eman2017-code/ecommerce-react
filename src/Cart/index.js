@@ -4,8 +4,6 @@ import Nav from "../Nav";
 class Cart extends React.Component {
   constructor(props) {
     super(props);
-    console.log("props");
-    console.log(props);
 
     this.state = {
       loggedInUser: this.props.location.state.loggedInUser
@@ -17,7 +15,7 @@ class Cart extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <Nav />
+        <Nav loggedInUser={this.state.loggedInUser} />
         <div>
           <h1>this is the cart page</h1>
         </div>
