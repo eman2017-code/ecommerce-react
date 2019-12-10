@@ -36,17 +36,29 @@ class Nav extends React.Component {
   // };
 
   render() {
-    // let toRender;
-    // if (this.state.loggedInUser.admin === false) {
-    //   toRender = (
-    //     <Link
-    //       to={{
-    //         pathname: "/products",
-    //         state: { loggedInUser: this.state.loggedInUser }
-    //       }}
-    //     />
-    //   );
-    // } else if (this.state.loggedInUser.admin === true) {
+    let ToRender;
+    if (this.state.loggedInUser !== undefined) {
+      ToRender = (
+        <Link
+          to={{
+            pathname: "/products",
+            state: { loggedInUser: this.state.loggedInUser }
+          }}
+        >
+          <button>Products</button>
+        </Link>
+      );
+    } else {
+      ToRender = (
+        <Link
+          to={{
+            pathname: "/guest"
+          }}
+        >
+          <button>Products</button>
+        </Link>
+      );
+    }
     //   toRender = (
     //     <Link
     //       to={{
@@ -55,7 +67,6 @@ class Nav extends React.Component {
     //       }}
     //     />
     //   );
-    // } else {
     //   toRender = <Link to="/guest" />;
     // }
     // if (this.state.admin === true && this.state.loggedIn === true) {
@@ -80,14 +91,17 @@ class Nav extends React.Component {
     // }
     return (
       <div className="navBar">
-        <CloudIcon />
-        {/* <Link to="/home">
-          <button>Home</button>
-        </Link> */}
+        {/* {this.state.loggedInUser === undefined ? } */}
 
-        <Link to="/guest">
-          <button>Products</button>
+        <CloudIcon />
+        <Link to="/home">
+          <button>Home</button>
         </Link>
+
+        {/* <Link to="/guest">
+          <button>Products</button>
+        </Link> */}
+        {ToRender}
 
         {/* if the user is not logged in, the path will be '/guest'
             if the user is logged in and hits the product tab, they will be brought to '/products' */}
