@@ -16,7 +16,9 @@ function ListProductUser(props) {
             <strong>$</strong>
             {product.price}
           </Button>
-          <Button onClick={() => props.addToCart()}>Add to Cart</Button>
+          <Button onClick={() => props.addToCart(product.id)}>
+            Add to Cart
+          </Button>
         </Card.Content>
       </Card>
     );

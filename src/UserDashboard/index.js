@@ -47,21 +47,43 @@ class UserDashboard extends React.Component {
     } catch (err) {}
   };
 
+  // addToCart = async (product.id) => {
+  //   console.log("product.id");
+  //     console.log(product.id);
+  //   try {
+  //         const reponse = await fetch(
+  //         process.env.REACT_APP_API_URL + "/api/v1/carts/" + product.id,
+  //         {
+  //           method: "POST",
+  //           credentials: "include",
+  //           body: JSON.stringify(product.id),
+  //           header: {
+  //             "Content-Type": "application/json"
+  //           }
+  //         }
+  //         const parsedAddedItemToCart = await reponse.json();
+  //         console.log("parsedAddedItemToCart");
+  //   console.log(parsedAddedItemToCart);
+  //       } catch (err) {}
+
+  // };
   addToCart = async productId => {
-    const reponse = await fetch(
-      process.env.REACT_APP_API_URL + "/api/v1/carts/" + productId,
-      {
-        method: "POST",
-        credentials: "include",
-        body: JSON.stringify(productId),
-        header: {
-          "Content-Type": "application/json"
+    try {
+      const response = await fetch(
+        process.env.REACT_APP_API_URL + "/api/v1/carts/" + productId,
+        {
+          method: "POST",
+          credentials: "include",
+          body: JSON.stringify(productId),
+          header: {
+            "Content-Type": "application/json"
+          }
         }
-      }
-    );
-    const parsedAddedItemToCart = await reponse.json();
-    console.log("parsedAddedItemToCart");
-    console.log(parsedAddedItemToCart);
+      );
+      const parsedResponse = await response.json();
+      console.log("parsedResponse");
+      console.log(parsedResponse);
+    } catch (err) {}
   };
 
   render() {
@@ -72,7 +94,7 @@ class UserDashboard extends React.Component {
         <h1 className="userDashboardHeader">PRO - SELL</h1>
         <ListProductUser
           products={this.state.products}
-          // addToCart={this.addToCart}
+          addToCart={this.addToCart}
         />
       </div>
     );
