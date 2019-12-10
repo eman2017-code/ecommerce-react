@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import UserAllProducts from "./UserDashboard";
 import AdminDashboard from "./AdminDashboard";
 import RegisterLogin from "./RegisterLogin";
