@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Form, Label, Divider, Checkbox } from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Nav from "../Nav";
+import { Redirect } from "react-router-dom";
+// import UserDashboard from "./UserDashboard";
 
 class RegisterLogin extends React.Component {
   constructor() {
@@ -13,9 +15,90 @@ class RegisterLogin extends React.Component {
       email: "",
       password: "",
       admin: false,
-      action: "login"
+      action: "login",
+      loggedIn: false,
+      admin: false,
+      loggedInUser: null
     };
   }
+
+  // register route
+  register = async registerInfo => {
+    const response = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/users/register",
+      {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(registerInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    const parsedLoginResponse = await response.json();
+    // check if the user is an admin
+    if (parsedLoginResponse.data.admin === true) {
+      this.setState({
+        loggedIn: true,
+        admin: true,
+        loggedInUser: parsedLoginResponse.data
+      });
+      console.log("this.state -- admin register");
+      console.log(this.state);
+    } else {
+      // if they are not an admin
+      if (response.ok) {
+        this.setState({
+          logged: true,
+          admin: false,
+          loggedInUser: parsedLoginResponse.data
+        });
+        console.log("this.state -- register");
+        console.log(this.state);
+      } else {
+      }
+    }
+  };
+
+  // login route
+  login = async loginInfo => {
+    const response = await fetch(
+      process.env.REACT_APP_API_URL + "/api/v1/users/login",
+      {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(loginInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    // parse the reponse
+    const parsedLoginResponse = await response.json();
+    if (parsedLoginResponse.data.admin === true) {
+      this.setState({
+        loggedIn: true,
+        admin: true,
+        loggedInUser: parsedLoginResponse.data
+      });
+      console.log("this.state -- admin login");
+      console.log(this.state);
+    } else {
+      // if they are not an admin
+      if (response.ok) {
+        this.setState({
+          logged: true,
+          admin: false,
+          loggedInUser: parsedLoginResponse.data
+        });
+        console.log("this.state login");
+        console.log(this.state);
+      } else {
+        // print out the error
+        console.log(parsedLoginResponse);
+      }
+    }
+  };
 
   // handle change method for each section user inputs
   handleChange = e => {
@@ -39,14 +122,14 @@ class RegisterLogin extends React.Component {
 
   loginRegister = () => {
     if (this.state.action === "login") {
-      this.props.login({
+      this.login({
         // this is checking the email
         email: this.state.email,
         // this is checking the password
         password: this.state.password
       });
     } else {
-      this.props.register({
+      this.register({
         first_name: this.state.first_name,
         last_name: this.state.last_name,
         email: this.state.email,
@@ -69,11 +152,46 @@ class RegisterLogin extends React.Component {
   };
 
   render() {
+    if (this.state.admin === true && this.state.loggedIn === true) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/admin",
+            state: { loggedInUser: this.state.loggedInUser }
+          }}
+        />
+      );
+    } else if (this.state.logged === true) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/products",
+            state: { loggedInUser: this.state.loggedInUser }
+          }}
+        />
+      );
+    } else {
+    }
     return (
       <div>
         <div>
           <Nav />
         </div>
+        {/* {this.state.admin === true && this.state.loggedIn === true ? (
+          <Redirect
+            to={{
+              pathname: "/admin",
+              state: { loggedInUser: this.state.loggedInUser }
+            }}
+          />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/register-login",
+              state: { loggedInUser: this.state.loggedInUser }
+            }}
+          />
+        )} */}
         <div>
           <div>
             <Form onSubmit={this.handleSubmit}>

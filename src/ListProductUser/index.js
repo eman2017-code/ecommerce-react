@@ -9,10 +9,14 @@ function ListProductUser(props) {
         <Card.Content>
           <Card.Header>{product.name}</Card.Header>
           <Card.Description>{product.description}</Card.Description>
-          <Card.Description>{product.price}</Card.Description>
+          {/* <Card.Description>{product.price}</Card.Description> */}
         </Card.Content>
         <Card.Content extra>
-          <Button>Add to Cart</Button>
+          <Button>
+            <strong>$</strong>
+            {product.price}
+          </Button>
+          <Button onClick={() => props.addToCart()}>Add to Cart</Button>
         </Card.Content>
       </Card>
     );

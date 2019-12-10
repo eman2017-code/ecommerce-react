@@ -13,7 +13,7 @@ function ListProductsAdmin(props) {
           <Button onClick={() => props.deleteProduct(product.id)}>
             Delete
           </Button>
-          <Button>Edit</Button>
+          <Button onClick={() => props.editProduct(product.id)}>Edit</Button>
         </Card.Content>
       </Card>
     );

@@ -18,6 +18,7 @@ import SideBarAdmin from "../SideBarAdmin";
 import Nav from "../Nav";
 import ProductFunctionalityAdmin from "../ProductFunctionalityAdmin";
 import Chart from "../Chart";
+import SearchProducts from "../SearchProducts";
 
 const drawerWidth = 240;
 
@@ -100,7 +101,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Dashboard(props) {
+export default function AdminDashboard(props) {
+  console.log(props);
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -132,7 +134,7 @@ export default function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" className={classes.title}>
-            <Nav />
+            <Nav loggedInUser={props.location.state.loggedInUser} />
           </Typography>
         </Toolbar>
       </AppBar>
@@ -167,9 +169,12 @@ export default function Dashboard(props) {
               <Paper className={fixedHeightPaper}>{/* <Deposits /> */}</Paper>
             </Grid>
             {/* Recent Orders */}
+            <SearchProducts />
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <ProductFunctionalityAdmin loggedInUser={props.loggedInUser} />
+                <ProductFunctionalityAdmin
+                  loggedInUser={props.location.state.loggedInUser}
+                />
               </Paper>
             </Grid>
           </Grid>

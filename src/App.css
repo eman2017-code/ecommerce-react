@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -78,4 +78,9 @@ h3 {
   background: rgb(142, 142, 147);
   margin-bottom: 5%;
   padding: 1%;
+} */
+
+.product {
+  height: 600px;
+  width: 300px;
 }
