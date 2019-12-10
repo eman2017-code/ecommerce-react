@@ -21,8 +21,8 @@ class UserDashboard extends React.Component {
   // when the component first appears
   componentDidMount = () => {
     this.getProducts();
-    console.log("this.state.loggedInUser -- userDashboard");
-    console.log(this.state.loggedInUser);
+    console.log("this.state -- userDashboard");
+    console.log(this.state);
   };
 
   // create function to see all the products that are in th database
@@ -44,8 +44,6 @@ class UserDashboard extends React.Component {
       this.setState({
         products: parsedProducts.data
       });
-      console.log("this.state");
-      console.log(this.state);
     } catch (err) {}
   };
 

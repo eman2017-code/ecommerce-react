@@ -13,7 +13,7 @@ class Nav extends React.Component {
 
   componentDidMount() {
     console.log("this.state -- navBar");
-    console.log(this.state);
+    console.log(this.state.loggedInUser);
   }
 
   // // log out method
@@ -44,7 +44,14 @@ class Nav extends React.Component {
         <Link to="/browser">
           <button>Products</button>
         </Link>
-        <Link to="/cart">
+        <Link
+          to={{
+            pathname: "/cart",
+            state: {
+              loggedInUser: this.state.loggedInUser
+            }
+          }}
+        >
           <button>Cart</button>
         </Link>
         <Link to="/register-login">
