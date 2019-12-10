@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CloudIcon from "@material-ui/icons/Cloud";
+import { Redirect } from "react-router-dom";
 
 class Nav extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Nav extends React.Component {
 
   componentDidMount() {
     console.log("this.state -- navBar");
-    console.log(this.state.loggedInUser);
+    console.log(this.state);
   }
 
   // // log out method
@@ -35,15 +36,62 @@ class Nav extends React.Component {
   // };
 
   render() {
+    // let toRender;
+    // if (this.state.loggedInUser.admin === false) {
+    //   toRender = (
+    //     <Link
+    //       to={{
+    //         pathname: "/products",
+    //         state: { loggedInUser: this.state.loggedInUser }
+    //       }}
+    //     />
+    //   );
+    // } else if (this.state.loggedInUser.admin === true) {
+    //   toRender = (
+    //     <Link
+    //       to={{
+    //         pathname: "/admin",
+    //         state: { loggedInUser: this.state.loggedInUser }
+    //       }}
+    //     />
+    //   );
+    // } else {
+    //   toRender = <Link to="/guest" />;
+    // }
+    // if (this.state.admin === true && this.state.loggedIn === true) {
+    //   return (
+    //     <Redirect
+    //       to={{
+    //         pathname: "/admin",
+    //         state: { loggedInUser: this.state.loggedInUser }
+    //       }}
+    //     />
+    //   );
+    // }
+    // if (this.state.logged === true) {
+    //   return (
+    //     <Redirect
+    //       to={{
+    //         pathname: "/products",
+    //         state: { loggedInUser: this.state.loggedInUser }
+    //       }}
+    //     />
+    //   );
+    // }
     return (
       <div className="navBar">
         <CloudIcon />
-        <Link to="/home">
+        {/* <Link to="/home">
           <button>Home</button>
-        </Link>
-        <Link to="/browser">
+        </Link> */}
+
+        <Link to="/guest">
           <button>Products</button>
         </Link>
+
+        {/* if the user is not logged in, the path will be '/guest'
+            if the user is logged in and hits the product tab, they will be brought to '/products' */}
+
         <Link
           to={{
             pathname: "/cart",

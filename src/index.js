@@ -36,7 +36,7 @@ const ComponentToRender = () => (
       <Route exact path="/home" component={MainPage} />
       <Route exact path="/register-login" component={RegisterLogin} />
       <Route exact path="/cart" component={Cart} />
-      <Route exact path="/browser" component={AllProducts} />
+      <Route exact path="/guest" component={AllProducts} />
       <Route exact path="/products" component={UserDashboard} />
       <Route exact path="/admin" component={AdminDashboard} />
     </div>

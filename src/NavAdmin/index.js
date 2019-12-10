@@ -41,7 +41,7 @@ class NavAdmin extends React.Component {
         <Link to="/home">
           <button>Home</button>
         </Link>
-        {/* <Link to="/browser">
+        {/* <Link to="/products-admin">
           <button>Products</button>
         </Link> */}
         {/* <Link to="/cart">

@@ -3,8 +3,6 @@ import { Button, Form, Label, Divider, Checkbox } from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Nav from "../Nav";
 import { Redirect } from "react-router-dom";
-import MainPage from "../MainPage";
-// import UserDashboard from "./UserDashboard";
 
 class RegisterLogin extends React.Component {
   constructor() {
@@ -18,7 +16,6 @@ class RegisterLogin extends React.Component {
       admin: false,
       action: "login",
       loggedIn: false,
-      admin: false,
       loggedInUser: null
     };
   }

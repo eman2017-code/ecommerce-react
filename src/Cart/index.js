@@ -8,11 +8,13 @@ class Cart extends React.Component {
     console.log(props);
 
     this.state = {
-      // loggedInUser: this.props
+      loggedInUser: this.props.location.state.loggedInUser
     };
   }
 
   render() {
+    console.log("this.state -- cart");
+    console.log(this.state);
     return (
       <div>
         <Nav />
