@@ -28,7 +28,7 @@ class Nav extends React.Component {
             state: { loggedInUser: this.state.loggedInUser }
           }}
         >
-          <h5>Products</h5>
+          <h2>Products</h2>
         </Link>
       );
     } else {
@@ -38,40 +38,50 @@ class Nav extends React.Component {
             pathname: "/guest"
           }}
         >
-          <h5>Products</h5>
+          <h2>Products</h2>
         </Link>
       );
     }
 
     return (
-      <div className="navBar">
-        <CloudIcon fontSize="large" />
-        <Link
-          to={{
-            pathname: "/home",
-            state: {
-              loggedInUser: this.state.loggedInUser
-            }
-          }}
-        >
-          <h5>Home</h5>
-        </Link>
+      <div>
+        <div id="navBar">
+          <h2 className="companyName">PRO - SELL</h2>
+          <p>
+            {" "}
+            <strong> 555 555 5555 </strong>{" "}
+          </p>
+          <Link
+            to={{
+              pathname: "/cart",
+              state: {
+                loggedInUser: this.state.loggedInUser
+              }
+            }}
+          ></Link>
+        </div>
 
-        {ToRenderProduct}
+        <div className="bottomNav">
+          <CloudIcon style={{ fontSize: 70 }} className="logo" />
 
-        <Link to="/register-login">
-          <h5>Login/Regsiter</h5>
-        </Link>
-        <Link
-          to={{
-            pathname: "/cart",
-            state: {
-              loggedInUser: this.state.loggedInUser
-            }
-          }}
-        >
-          <LocalMallIcon fontSize="large" color="action" />
-        </Link>
+          <Link
+            to={{
+              pathname: "/home",
+              state: {
+                loggedInUser: this.state.loggedInUser
+              }
+            }}
+          >
+            <h2>Home</h2>
+          </Link>
+
+          {ToRenderProduct}
+
+          <Link to="/register-login">
+            <h2>Login/Regsiter</h2>
+          </Link>
+          <LocalMallIcon style={{ fontSize: 35 }} color="action" />
+        </div>
       </div>
     );
   }

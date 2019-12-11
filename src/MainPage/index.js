@@ -2,8 +2,9 @@ import React from "react";
 import Nav from "../Nav";
 import iphone11 from "../iphone11Pro.png";
 import iphone11ProMax from "../iphone11ProMax.jpg";
-import airpods from "../airpods.webp";
+import airpods from "../MWP22_AV2.jpeg";
 import yeezy from "../yeezy.jpg";
+// import Slider from "../Slider";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -20,9 +21,8 @@ class MainPage extends React.Component {
     return (
       <div>
         <Nav loggedInUser={this.state.loggedInUser} />
-        <h4>Save 30% till December 24th -- Offer ends at Midnight!</h4>
-        <div className="image">
-          <img src={iphone11ProMax} alt="air pods pro" className="img" />
+        <div id="image">
+          {/* <img src={airpods} alt="air pods pro" className="img" /> */}
           <h2>Electronics</h2>
         </div>
         <div className="middleImgDiv">
