@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CloudIcon from "@material-ui/icons/Cloud";
 import { Redirect } from "react-router-dom";
+import LocalMallIcon from "@material-ui/icons/LocalMall";
 
 class Nav extends React.Component {
   constructor(props) {
@@ -17,24 +18,6 @@ class Nav extends React.Component {
     console.log(this.state);
   }
 
-  // // log out method
-  // logout = async () => {
-  //   const response = await fetch(
-  //     process.env.REACT_APP_API_URL + "/api/v1/users/logout",
-  //     {
-  //       credentials: "include"
-  //     }
-  //   );
-  //   const parsedLogoutResponse = await response.json();
-  //   if (response.ok) {
-  //     this.setState({
-  //       loggedIn: false
-  //     });
-  //     console.log("logged out");
-  //   } else {
-  //   }
-  // };
-
   render() {
     let ToRenderProduct;
     if (this.state.loggedInUser !== undefined) {
@@ -45,7 +28,7 @@ class Nav extends React.Component {
             state: { loggedInUser: this.state.loggedInUser }
           }}
         >
-          <button>Products</button>
+          <h7>Products</h7>
         </Link>
       );
     } else {
@@ -55,14 +38,14 @@ class Nav extends React.Component {
             pathname: "/guest"
           }}
         >
-          <button>Products</button>
+          <h7>Products</h7>
         </Link>
       );
     }
 
     return (
       <div className="navBar">
-        <CloudIcon />
+        <CloudIcon fontSize="large" />
         <Link
           to={{
             pathname: "/home",
@@ -71,17 +54,14 @@ class Nav extends React.Component {
             }
           }}
         >
-          <button>Home</button>
+          <h7>Home</h7>
         </Link>
 
-        {/* <Link to="/guest">
-          <button>Products</button>
-        </Link> */}
         {ToRenderProduct}
 
-        {/* if the user is not logged in, the path will be '/guest'
-            if the user is logged in and hits the product tab, they will be brought to '/products' */}
-
+        <Link to="/register-login">
+          <h7>Login/Regsiter</h7>
+        </Link>
         <Link
           to={{
             pathname: "/cart",
@@ -90,10 +70,7 @@ class Nav extends React.Component {
             }
           }}
         >
-          <button>Cart</button>
-        </Link>
-        <Link to="/register-login">
-          <button>Login/Regsiter</button>
+          <LocalMallIcon fontSize="large" />
         </Link>
       </div>
     );

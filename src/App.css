@@ -7,17 +7,6 @@
   opacity: 0.9;
 }
 
-/* form {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 10%;
-  width: 40%;
-  border: 3px solid black;
-  padding: 5%;
-  box-shadow: 5px 10px 8px #888888;
-  border-radius: 3%;
-} */
-
 .img {
   width: 100%;
   height: 50%;
@@ -62,8 +51,8 @@
 
 .navBar {
   display: flex;
-  background: rgb(142, 142, 147);
-  padding: 2%;
+  background: rgb(72, 72, 74);
+  padding: 1%;
   justify-content: space-evenly;
   overflow: hidden;
 }
@@ -74,4 +63,8 @@
   padding: 2%;
   justify-content: space-around;
   overflow: hidden;
+}
+
+h7 {
+  color: rgb(242, 242, 247);
 }

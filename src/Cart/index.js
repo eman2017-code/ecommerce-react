@@ -48,7 +48,9 @@ class Cart extends React.Component {
         <Nav loggedInUser={this.state.loggedInUser} />
         <div>
           <h1>this is the cart page</h1>
+
           <ListItemsInUserCart products={this.state.products} />
+          <button>Check Out</button>
         </div>
       </div>
     );

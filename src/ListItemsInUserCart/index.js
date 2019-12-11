@@ -10,16 +10,16 @@ function ListItemsInUserCart(props) {
         <Card.Content>
           <Card.Header>{product.product_id.name}</Card.Header>
           <Card.Description>{product.product_id.description}</Card.Description>
-          {/* <Card.Description>{product.price}</Card.Description> */}
+          <Card.Description>{product.product_id.price}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           {/* <Button> */}
           {/* <strong>$</strong> */}
           {/* {product.price} */}
           {/* </Button> */}
-          <Button onClick={() => props.addToCart(props.product_id)}>
+          {/* <Button onClick={() => props.addToCart(props.product_id)}>
             Add to Cart
-          </Button>
+          </Button> */}
         </Card.Content>
       </Card>
     );
