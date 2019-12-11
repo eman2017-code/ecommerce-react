@@ -23,11 +23,6 @@ class SearchContainer extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log("props -- searchContainer");
-    console.log(this.props);
-  }
-
   // handles the change for the search input
   handleChange = e => {
     // sets the state for the value property
@@ -65,9 +60,7 @@ class SearchContainer extends Component {
         results: [...parsedResponse.data],
         isLoading: false
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   addToCart = async productId => {
@@ -84,14 +77,10 @@ class SearchContainer extends Component {
         }
       );
       const parsedResponse = await response.json();
-      console.log("parsedResponse");
-      console.log(parsedResponse);
     } catch (err) {}
   };
 
   render() {
-    console.log("this.props -- searchProducts");
-    console.log(this.props);
     return (
       <Container id="find-container">
         <Segment id="find-segment">

@@ -13,8 +13,6 @@ class UserDashboard extends React.Component {
     this.state = {
       products: [],
       loggedInUser: this.props.location.state.loggedInUser
-      // create modal to show the product for a user to see
-      // showProduct: false
     };
   }
 
@@ -38,8 +36,6 @@ class UserDashboard extends React.Component {
       );
       // convert them into json
       const parsedProducts = await products.json();
-      // console.log("parsedProducts");
-      // console.log(parsedProducts);
 
       this.setState({
         products: parsedProducts.data

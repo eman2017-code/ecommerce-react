@@ -14,8 +14,6 @@ class Cart extends React.Component {
 
   componentDidMount = () => {
     this.getProducts(this.state.loggedInUser.id);
-    console.log("this.state -- Cart");
-    console.log(this.state);
   };
 
   // API call to get products user has in their cart
@@ -31,8 +29,6 @@ class Cart extends React.Component {
       );
       // convert them into json
       const parsedProducts = await products.json();
-      console.log("parsedProducts");
-      console.log(parsedProducts);
 
       this.setState({
         products: parsedProducts.data
@@ -41,8 +37,6 @@ class Cart extends React.Component {
   };
 
   render() {
-    // console.log("this.state -- cart");
-    // console.log(this.state);
     return (
       <div>
         <Nav loggedInUser={this.state.loggedInUser} />

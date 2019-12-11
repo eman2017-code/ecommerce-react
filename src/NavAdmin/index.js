@@ -11,29 +11,6 @@ class NavAdmin extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log("this.state -- navBar");
-    console.log(this.state);
-  }
-
-  // // log out method
-  // logout = async () => {
-  //   const response = await fetch(
-  //     process.env.REACT_APP_API_URL + "/api/v1/users/logout",
-  //     {
-  //       credentials: "include"
-  //     }
-  //   );
-  //   const parsedLogoutResponse = await response.json();
-  //   if (response.ok) {
-  //     this.setState({
-  //       loggedIn: false
-  //     });
-  //     console.log("logged out");
-  //   } else {
-  //   }
-  // };
-
   render() {
     return (
       <div className="navBarAdmin">

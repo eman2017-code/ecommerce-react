@@ -30,14 +30,10 @@ class AllProducts extends React.Component {
       );
       // convert them into json
       const parsedProducts = await products.json();
-      //   console.log("parsedProducts");
-      //   console.log(parsedProducts);
 
       this.setState({
         products: parsedProducts.data
       });
-      //   console.log("this.state");
-      //   console.log(this.state);
     } catch (err) {}
   };
 

@@ -15,8 +15,6 @@ class MainPage extends React.Component {
   }
 
   render() {
-    console.log("this.state -- UserDashboard");
-    console.log(this.state);
     return (
       <div>
         <Nav loggedInUser={this.state.loggedInUser} />

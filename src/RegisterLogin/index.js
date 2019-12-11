@@ -164,9 +164,6 @@ class RegisterLogin extends React.Component {
         />
       );
     }
-    if (this.state.logged === null) {
-      console.log("they are just browsing");
-    }
     return (
       <div>
         <div>

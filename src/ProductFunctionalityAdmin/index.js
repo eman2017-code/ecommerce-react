@@ -24,8 +24,6 @@ class ProductFunctionalityAdmin extends React.Component {
 
   componentDidMount() {
     this.getProducts();
-    console.log("this.state -- product functionality admin");
-    console.log(this.state);
   }
 
   // create method that will loop through all of the products
@@ -68,12 +66,9 @@ class ProductFunctionalityAdmin extends React.Component {
 
   // method to edit product
   editProduct = idOfProductToEdit => {
-    // console.log("you are hitting the edit button");
     const productToEdit = this.state.products.find(
       product => product.id === idOfProductToEdit
     );
-    console.log("productToEdit");
-    console.log(productToEdit);
 
     this.setState({
       editProductModal: true,
@@ -110,8 +105,6 @@ class ProductFunctionalityAdmin extends React.Component {
       );
 
       const updateResponseParsed = await updateResponse.json();
-      console.log("updateResponseParsed");
-      console.log(updateResponseParsed);
 
       const newProductArrayWithUpdate = this.state.products.map(product => {
         if (product.id === updateResponseParsed.data.id) {

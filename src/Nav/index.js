@@ -13,11 +13,6 @@ class Nav extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log("this.state -- navBar");
-    console.log(this.state);
-  }
-
   render() {
     let ToRenderProduct;
     if (this.state.loggedInUser !== undefined) {
