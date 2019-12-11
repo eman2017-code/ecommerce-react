@@ -1,22 +1,10 @@
-/* .adminDashboardHeader {
-  background: rgb(142, 142, 147);
-  margin: 0px;
-  padding: 1%;
-} */
-
-/* .userDashboardHeader {
-  background: rgb(142, 142, 147);
-  margin-bottom: 5%;
-  padding: 1%;
-} */
-
 body {
-  margin: 3%;
+  margin: 0px 2% 0px 2%;
 }
 
 #navBar {
   display: flex;
-  padding: 1%;
+  padding: 3%;
 }
 
 p {
@@ -28,7 +16,6 @@ p {
   padding: 4%;
   display: flex;
   justify-content: flex-end;
-  /* background: rgb(28, 28, 30); */
 }
 
 .img {
@@ -41,32 +28,6 @@ p {
 .companyName {
   flex-grow: 1;
 }
-
-/* .navBarAdmin {
-  display: flex;
-  background: rgb(142, 142, 147);
-  padding: 2%;
-  justify-content: space-around;
-  overflow: hidden;
-} */
-
-/* h4 {
-  text-align: center;
-  color: rgb(44, 44, 46);
-  background: rbg(44, 44, 46);
-  padding: 4%;
-} */
-
-/* .middleNav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  width: 25%;
-} */
-
-/* .middleNav > h2 {
-  color: green;
-} */
 
 .bottomNav {
   display: flex;
@@ -84,4 +45,47 @@ h2 {
 
 h5 {
   color: #000;
+}
+
+.middleImg {
+  float: left;
+  width: 33.33%;
+  padding: 5%;
+  transition: transform 0.3s;
+}
+
+.middleImg:hover {
+  transform: scale(1.2);
+}
+
+.middleImgDiv:after {
+  content: "";
+  clear: both;
+  display: table;
+  border: 1px solid black;
+}
+
+.lastImgDiv:after {
+  content: "";
+  clear: both;
+  display: table;
+  /* border: 1px solid black; */
+}
+
+.lastImg {
+  float: left;
+  width: 25%;
+  height: 50vh;
+  padding: 2%;
+}
+
+.trending {
+  text-align: center;
+  font-size: 45px;
+}
+
+.newCollection {
+  font-size: 20px;
+  text-align: center;
+  color: red;
 }
