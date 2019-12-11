@@ -1,70 +1,120 @@
-import React from "react";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import InputBase from "@material-ui/core/InputBase";
-import { fade, makeStyles } from "@material-ui/core/styles";
-import SearchIcon from "@material-ui/icons/Search";
+import React, { Component } from "react";
+import {
+  Segment,
+  Container,
+  Form,
+  Card,
+  Dimmer,
+  Loader,
+  Header
+} from "semantic-ui-react";
+import ListProductUser from "../ListProductUser";
 
-const useStyles = makeStyles(theme => ({
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    },
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto"
-    }
-  },
-  searchIcon: {
-    width: theme.spacing(7),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  inputRoot: {
-    color: "inherit"
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: 120,
-      "&:focus": {
-        width: 200
-      }
-    }
+// component imports
+class SearchContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+      // result of products
+      results: [],
+      // if the search results are still loading
+      isLoading: false
+    };
   }
-}));
 
-export default function SearchAppBar() {
-  const classes = useStyles();
+  componentDidMount() {
+    console.log("props -- searchContainer");
+    console.log(this.props);
+  }
 
-  return (
-    <div className={classes.root}>
-      <Toolbar>
-        <IconButton edge="start" aria-label="open drawer"></IconButton>
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput
-            }}
+  // handles the change for the search input
+  handleChange = e => {
+    // sets the state for the value property
+    this.setState({
+      value: e.target.value
+    });
+    // calls function to make api call to show search results
+    this.getResults();
+  };
+
+  // makes an api call to get the search results
+  getResults = async () => {
+    try {
+      // changing the loading icon to spinning
+      this.setState({ isLoading: true });
+
+      // makes api call to get the search results
+      const response = await fetch(
+        process.env.REACT_APP_API_URL + "/api/v1/products/find",
+        {
+          method: "POST",
+          body: JSON.stringify({ value: this.state.value }),
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+      // parses the response
+      const parsedResponse = await response.json();
+      // set the search results in that state and isLoading back to false
+      // to display the results and hide the loading icon
+      this.setState({
+        results: [...parsedResponse.data],
+        isLoading: false
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  addToCart = async productId => {
+    try {
+      const response = await fetch(
+        process.env.REACT_APP_API_URL + "/api/v1/carts/" + productId,
+        {
+          method: "POST",
+          credentials: "include",
+          body: JSON.stringify(productId),
+          header: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const parsedResponse = await response.json();
+      console.log("parsedResponse");
+      console.log(parsedResponse);
+    } catch (err) {}
+  };
+
+  render() {
+    console.log("this.props -- searchProducts");
+    console.log(this.props);
+    return (
+      <Container id="find-container">
+        <Segment id="find-segment">
+          <Header as="h3">Find Products</Header>
+          <Form.Input
+            type="text"
+            id="search-input"
+            value={this.state.value}
+            onChange={this.handleChange}
+            placeholder="Search For Products..."
+            autoComplete="off"
           />
-        </div>
-      </Toolbar>
-    </div>
-  );
+          {this.state.isLoading === true ? (
+            <Loader active />
+          ) : (
+            <ListProductUser
+              addToCart={this.addToCart}
+              products={this.state.results}
+            />
+          )}
+        </Segment>
+      </Container>
+    );
+  }
 }
+export default SearchContainer;

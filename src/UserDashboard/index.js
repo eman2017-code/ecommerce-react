@@ -47,26 +47,6 @@ class UserDashboard extends React.Component {
     } catch (err) {}
   };
 
-  // addToCart = async (product.id) => {
-  //   console.log("product.id");
-  //     console.log(product.id);
-  //   try {
-  //         const reponse = await fetch(
-  //         process.env.REACT_APP_API_URL + "/api/v1/carts/" + product.id,
-  //         {
-  //           method: "POST",
-  //           credentials: "include",
-  //           body: JSON.stringify(product.id),
-  //           header: {
-  //             "Content-Type": "application/json"
-  //           }
-  //         }
-  //         const parsedAddedItemToCart = await reponse.json();
-  //         console.log("parsedAddedItemToCart");
-  //   console.log(parsedAddedItemToCart);
-  //       } catch (err) {}
-
-  // };
   addToCart = async productId => {
     try {
       const response = await fetch(
@@ -90,7 +70,10 @@ class UserDashboard extends React.Component {
     return (
       <div>
         <Nav loggedInUser={this.state.loggedInUser} />
-        <SearchProducts />
+        <SearchProducts
+          products={this.state.products}
+          addToCart={this.addToCart}
+        />
         <h1 className="userDashboardHeader">PRO - SELL</h1>
         <ListProductUser
           products={this.state.products}

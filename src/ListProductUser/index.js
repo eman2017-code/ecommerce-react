@@ -2,6 +2,9 @@ import React from "react";
 import { Card, Image, Button } from "semantic-ui-react";
 
 function ListProductUser(props) {
+  console.log("\nthis is props.products");
+  console.log(props.products);
+  console.log(props);
   const products = props.products.map(product => {
     return (
       <Card key={product.id}>
