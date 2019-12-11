@@ -28,7 +28,7 @@ class Nav extends React.Component {
             state: { loggedInUser: this.state.loggedInUser }
           }}
         >
-          <h7>Products</h7>
+          <h5>Products</h5>
         </Link>
       );
     } else {
@@ -38,7 +38,7 @@ class Nav extends React.Component {
             pathname: "/guest"
           }}
         >
-          <h7>Products</h7>
+          <h5>Products</h5>
         </Link>
       );
     }
@@ -54,13 +54,13 @@ class Nav extends React.Component {
             }
           }}
         >
-          <h7>Home</h7>
+          <h5>Home</h5>
         </Link>
 
         {ToRenderProduct}
 
         <Link to="/register-login">
-          <h7>Login/Regsiter</h7>
+          <h5>Login/Regsiter</h5>
         </Link>
         <Link
           to={{
@@ -70,7 +70,7 @@ class Nav extends React.Component {
             }
           }}
         >
-          <LocalMallIcon fontSize="large" />
+          <LocalMallIcon fontSize="large" color="action" />
         </Link>
       </div>
     );
