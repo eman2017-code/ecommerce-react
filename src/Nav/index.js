@@ -28,7 +28,7 @@ class Nav extends React.Component {
             state: { loggedInUser: this.state.loggedInUser }
           }}
         >
-          <h7>Products</h7>
+          <h2>Products</h2>
         </Link>
       );
     } else {
@@ -38,40 +38,50 @@ class Nav extends React.Component {
             pathname: "/guest"
           }}
         >
-          <h7>Products</h7>
+          <h2>Products</h2>
         </Link>
       );
     }
 
     return (
-      <div className="navBar">
-        <CloudIcon fontSize="large" />
-        <Link
-          to={{
-            pathname: "/home",
-            state: {
-              loggedInUser: this.state.loggedInUser
-            }
-          }}
-        >
-          <h7>Home</h7>
-        </Link>
+      <div>
+        <div id="navBar">
+          <h2 className="companyName">PRO - SELL</h2>
+          <p>
+            {" "}
+            <strong> 555 555 5555 </strong>{" "}
+          </p>
+          <Link
+            to={{
+              pathname: "/cart",
+              state: {
+                loggedInUser: this.state.loggedInUser
+              }
+            }}
+          ></Link>
+        </div>
 
-        {ToRenderProduct}
+        <div className="bottomNav">
+          <CloudIcon style={{ fontSize: 70 }} className="logo" />
 
-        <Link to="/register-login">
-          <h7>Login/Regsiter</h7>
-        </Link>
-        <Link
-          to={{
-            pathname: "/cart",
-            state: {
-              loggedInUser: this.state.loggedInUser
-            }
-          }}
-        >
-          <LocalMallIcon fontSize="large" />
-        </Link>
+          <Link
+            to={{
+              pathname: "/home",
+              state: {
+                loggedInUser: this.state.loggedInUser
+              }
+            }}
+          >
+            <h2>Home</h2>
+          </Link>
+
+          {ToRenderProduct}
+
+          <Link to="/register-login">
+            <h2>Login/Regsiter</h2>
+          </Link>
+          <LocalMallIcon style={{ fontSize: 35 }} color="action" />
+        </div>
       </div>
     );
   }
