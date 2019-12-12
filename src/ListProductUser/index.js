@@ -15,10 +15,7 @@ function ListProductUser(props) {
           {/* <Card.Description>{product.price}</Card.Description> */}
         </Card.Content>
         <Card.Content extra>
-          <Button>
-            <strong>$</strong>
-            {product.price}
-          </Button>
+          <h4>$ {product.price}</h4>
           <Button onClick={() => props.addToCart(product.id)}>
             Add to Cart
           </Button>
@@ -31,3 +28,28 @@ function ListProductUser(props) {
 }
 
 export default ListProductUser;
+
+// import React from "react";
+
+// function ListProductUser(props) {
+//   const products = props.products.map(product => {
+//     return (
+//       <div key={product.id} className="productDiv">
+//         <img src={product.picture} className="productImg" />
+//         {/* <button>Add To Cart</button> */}
+//         <div className="productInfoOptions">
+//           <p className="productInfo">{product.name}</p>
+//           <p className="productInfo">{product.description}</p>
+//           {/* <strong> */}
+//           <p className="productInfo">{product.price}</p>
+//           {/* </strong> */}
+//           <button>Add To Cart</button>
+//         </div>
+//       </div>
+//     );
+//   });
+
+//   return <div>{products}</div>;
+// }
+
+// export default ListProductUser;

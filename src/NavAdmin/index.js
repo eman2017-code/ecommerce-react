@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CloudIcon from "@material-ui/icons/Cloud";
+// import LocalMallIcon from "@material-ui/icons/LocalMall";
 
 class NavAdmin extends React.Component {
   constructor(props) {
@@ -13,14 +14,22 @@ class NavAdmin extends React.Component {
 
   render() {
     return (
-      <div className="navBarAdmin">
-        <CloudIcon />
-        <Link to="/home">
-          <button>Home</button>
-        </Link>
-        <Link to="/admin">
-          <button>My Account</button>
-        </Link>
+      <div>
+        <div id="navBarAdmin">
+          <CloudIcon style={{ fontSize: 35 }} className="logoAdmin" />
+          <h2 className="companyNameAdmin">PRO - SELL</h2>
+
+          <Link
+            to={{
+              pathname: "/home",
+              state: {
+                loggedInUser: this.state.loggedInUser
+              }
+            }}
+          >
+            <h2 className="homeAdmin">Home</h2>
+          </Link>
+        </div>
       </div>
     );
   }

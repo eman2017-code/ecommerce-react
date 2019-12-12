@@ -41,11 +41,14 @@ class AllProducts extends React.Component {
     return (
       <div>
         <Nav />
+
         <SearchProducts />
-        <ListProductUser
-          products={this.state.products}
-          addToCart={this.addToCart}
-        />
+        <div className="container">
+          <ListProductUser
+            products={this.state.products}
+            addToCart={this.addToCart}
+          />
+        </div>
       </div>
     );
   }

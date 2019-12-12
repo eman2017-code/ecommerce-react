@@ -169,71 +169,71 @@ class RegisterLogin extends React.Component {
         <div>
           <Nav />
         </div>
+        {/* <div> */}
         <div>
-          <div>
-            <Form onSubmit={this.handleSubmit}>
-              {this.state.action === "register" ? (
-                <React.Fragment>
-                  <br></br>
-                  <Label>Become a Seller:</Label>
-                  <Checkbox admin="admin" onClick={this.admin} />
-                  <br></br>
-                  <br></br>
-                  <Label>First Name:</Label>
-                  <Divider hidden />
-                  <Form.Input
-                    type="text"
-                    name="first_name"
-                    value={this.state.first_name}
-                    onChange={this.handleChange}
-                  ></Form.Input>
-                  <Label>Last Name:</Label>
-                  <Divider hidden />
-                  <Form.Input
-                    type="text"
-                    name="last_name"
-                    value={this.state.last_name}
-                    onChange={this.handleChange}
-                  ></Form.Input>
-                </React.Fragment>
-              ) : null}
+          <Form onSubmit={this.handleSubmit} className="loginRegisterForm">
+            {this.state.action === "register" ? (
+              <React.Fragment>
+                <br></br>
+                <Label>Become a Seller:</Label>
+                <Checkbox admin="admin" onClick={this.admin} />
+                <br></br>
+                <br></br>
+                <Label>First Name:</Label>
+                <Divider hidden />
+                <Form.Input
+                  type="text"
+                  name="first_name"
+                  value={this.state.first_name}
+                  onChange={this.handleChange}
+                ></Form.Input>
+                <Label>Last Name:</Label>
+                <Divider hidden />
+                <Form.Input
+                  type="text"
+                  name="last_name"
+                  value={this.state.last_name}
+                  onChange={this.handleChange}
+                ></Form.Input>
+              </React.Fragment>
+            ) : null}
 
-              <Label>Email:</Label>
-              <Divider hidden />
-              <Form.Input
-                type="text"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              ></Form.Input>
+            <Label>Email:</Label>
+            <Divider hidden />
+            <Form.Input
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            ></Form.Input>
 
-              <Label>Password:</Label>
-              <Divider hidden />
-              <Form.Input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              ></Form.Input>
-              <Divider hidden />
-              <Button type="Submit">
-                {this.state.action === "register" ? "Register" : "Login"}
-              </Button>
-              <br></br>
-              {this.state.action === "register" ? (
-                <small>
-                  Already have an account? Log in{" "}
-                  <span onClick={this.switchForm}>here</span>
-                </small>
-              ) : (
-                <small>
-                  Need an account? Sign up{" "}
-                  <span onClick={this.switchForm}>here</span>!
-                </small>
-              )}
-            </Form>
-          </div>
+            <Label>Password:</Label>
+            <Divider hidden />
+            <Form.Input
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            ></Form.Input>
+            <Divider hidden />
+            <Button type="Submit">
+              {this.state.action === "register" ? "Register" : "Login"}
+            </Button>
+            <br></br>
+            {this.state.action === "register" ? (
+              <small>
+                Already have an account? Log in{" "}
+                <span onClick={this.switchForm}>here</span>
+              </small>
+            ) : (
+              <small>
+                Need an account? Sign up{" "}
+                <span onClick={this.switchForm}>here</span>!
+              </small>
+            )}
+          </Form>
         </div>
+        {/* </div> */}
       </div>
     );
   }

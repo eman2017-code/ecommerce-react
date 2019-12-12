@@ -42,10 +42,20 @@ class Nav extends React.Component {
       <div>
         <div id="navBar">
           <h2 className="companyName">PRO - SELL</h2>
-          <p>
+          <p className="number">
             {" "}
-            <strong> 555 555 5555 </strong>{" "}
+            <strong> 555 - 555 - 5555 </strong>{" "}
           </p>
+          <Link
+            to={{
+              pathname: "/cart",
+              state: {
+                loggedInUser: this.state.loggedInUser
+              }
+            }}
+          >
+            <LocalMallIcon style={{ fontSize: 40 }} color="action" />
+          </Link>
         </div>
 
         <div className="bottomNav">
@@ -66,16 +76,6 @@ class Nav extends React.Component {
 
           <Link to="/register-login">
             <h2>Login/Regsiter</h2>
-          </Link>
-          <Link
-            to={{
-              pathname: "/cart",
-              state: {
-                loggedInUser: this.state.loggedInUser
-              }
-            }}
-          >
-            <LocalMallIcon style={{ fontSize: 35 }} color="action" />
           </Link>
         </div>
       </div>
