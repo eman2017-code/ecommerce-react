@@ -1,6 +1,8 @@
 import React from "react";
 import Nav from "../Nav";
 import ListItemsInUserCart from "../ListItemsInUserCart";
+import Button from "@material-ui/core/Button";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 class Cart extends React.Component {
   constructor(props) {
@@ -44,7 +46,9 @@ class Cart extends React.Component {
           <h1>this is the cart page</h1>
 
           <ListItemsInUserCart products={this.state.products} />
-          <button>Check Out</button>
+          <Link to="/checkout">
+            <Button variant="contained">Check Out</Button>
+          </Link>
         </div>
       </div>
     );

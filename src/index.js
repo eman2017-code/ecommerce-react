@@ -28,6 +28,7 @@ import RegisterLogin from "./RegisterLogin";
 import Cart from "./Cart";
 import AdminDashboard from "./AdminDashboard";
 import AllProducts from "./AllProducts";
+import CheckOut from "./CheckOut";
 
 const ComponentToRender = () => (
   <Router>
@@ -39,6 +40,7 @@ const ComponentToRender = () => (
       <Route exact path="/guest" component={AllProducts} />
       <Route exact path="/products" component={UserDashboard} />
       <Route exact path="/admin" component={AdminDashboard} />
+      <Route exact path="/checkout" component={CheckOut} />
     </div>
   </Router>
 );
