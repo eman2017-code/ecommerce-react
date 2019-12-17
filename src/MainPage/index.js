@@ -2,11 +2,8 @@ import React from "react";
 import Nav from "../Nav";
 import iphone11 from "../iphone11Pro.png";
 import applwatch from "../applwatch.jpg";
-// import airpods from "../airPodsCase.jpeg";
-import yeezy from "../yeezy.jpg";
 import appleTvRemote from "../appleTvRemote.jpeg";
 import samsungFridge from "../samsungFridge.webp";
-import printer from "../printer.jpg";
 import yeezys from "../yeezys.jpg";
 import supremeHoodie from "../supremeHoodie.jpg";
 import iphoneX from "../iphoneX.jpg";
@@ -46,9 +43,6 @@ class MainPage extends React.Component {
         </div>
         <h4 className="newCollection">NEW COLLECTION</h4>
         <h1 className="trending">TRENDING PRODUCTS</h1>
-        {/* <div className="lastImgDiv">
-          <img src={yeezy} alt="yeezy" className="lastImg" />
-        </div> */}
         <div className="lastImgDiv">
           <img src={appleTvRemote} alt="apple tv remote" className="lastImg" />
           <img src={samsungFridge} alt="samsung fridge" className="lastImg" />
@@ -59,6 +53,7 @@ class MainPage extends React.Component {
           <img src={beats} alt="beats headphones" className="lastImg" />
           <img src={bike} alt="bicycle" className="lastImg" />
         </div>
+        <footer>&copy;PRO-SELL 2019</footer>
       </div>
     );
   }
