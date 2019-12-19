@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CloudIcon from "@material-ui/icons/Cloud";
-// import LocalMallIcon from "@material-ui/icons/LocalMall";
 
 class NavAdmin extends React.Component {
   constructor(props) {

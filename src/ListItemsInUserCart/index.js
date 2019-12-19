@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Image, Button } from "semantic-ui-react";
 
 function ListItemsInUserCart(props) {
-  console.log(props);
   const products = props.products.map(product => {
     return (
       <Card key={product.product_id.id}>
@@ -12,15 +11,7 @@ function ListItemsInUserCart(props) {
           <Card.Description>{product.product_id.description}</Card.Description>
           <Card.Description>{product.product_id.price}</Card.Description>
         </Card.Content>
-        <Card.Content extra>
-          {/* <Button> */}
-          {/* <strong>$</strong> */}
-          {/* {product.price} */}
-          {/* </Button> */}
-          {/* <Button onClick={() => props.addToCart(props.product_id)}>
-            Add to Cart
-          </Button> */}
-        </Card.Content>
+        <Card.Content extra></Card.Content>
       </Card>
     );
   });

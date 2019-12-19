@@ -6,8 +6,6 @@ import SearchProducts from "../SearchProducts";
 
 class UserDashboard extends React.Component {
   constructor(props) {
-    console.log("props -- userDashboard");
-    console.log(props);
     super(props);
 
     this.state = {
@@ -19,8 +17,6 @@ class UserDashboard extends React.Component {
   // when the component first appears
   componentDidMount = () => {
     this.getProducts();
-    console.log("this.state -- userDashboard");
-    console.log(this.state);
   };
 
   // create function to see all the products that are in th database
@@ -57,8 +53,6 @@ class UserDashboard extends React.Component {
         }
       );
       const parsedResponse = await response.json();
-      console.log("parsedResponse");
-      console.log(parsedResponse);
     } catch (err) {}
   };
 
